@@ -119,3 +119,5 @@ const menuItems = [
     "ARCHIVE",
     "SETTINGS"
 ];
+
+const menu = document.getElementById("menu");
