@@ -379,3 +379,220 @@ button:active{
 /* =====================================================
    PART 1 END
 ===================================================== */
+/* =====================================================
+   A.R.C.H.O.N.
+   Version 3.0
+   STYLE.CSS
+   PART 2A
+   MAIN MENU
+===================================================== */
+
+/* =====================================================
+   MENU CONTAINER
+===================================================== */
+
+.menu-container{
+
+    width:100%;
+    max-width:900px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    animation:menuFade .8s ease;
+
+}
+
+.menu-container h2{
+
+    font-size:42px;
+
+    letter-spacing:10px;
+
+    margin-bottom:50px;
+
+    color:var(--primary);
+
+    text-shadow:
+
+        0 0 10px var(--primary),
+        0 0 30px rgba(73,217,255,.35);
+
+}
+
+/* =====================================================
+   MENU LIST
+===================================================== */
+
+#menuList{
+
+    width:100%;
+    max-width:500px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+/* =====================================================
+   MENU BUTTON
+===================================================== */
+
+.menu-btn{
+
+    width:100%;
+
+    padding:18px;
+
+    background:rgba(255,255,255,.02);
+
+    border:1px solid var(--border);
+
+    color:var(--primary);
+
+    font-size:18px;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    transition:
+
+        transform .25s ease,
+        background .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease,
+        color .25s ease;
+
+    opacity:0;
+
+    animation:menuItemAppear .6s forwards;
+
+}
+
+/* Delay animasi tiap tombol */
+
+.menu-btn:nth-child(1){animation-delay:.10s;}
+.menu-btn:nth-child(2){animation-delay:.20s;}
+.menu-btn:nth-child(3){animation-delay:.30s;}
+.menu-btn:nth-child(4){animation-delay:.40s;}
+.menu-btn:nth-child(5){animation-delay:.50s;}
+
+/* =====================================================
+   MENU HOVER
+===================================================== */
+
+.menu-btn:hover{
+
+    transform:translateX(10px);
+
+    border-color:var(--secondary);
+
+    color:#ffffff;
+
+    background:
+
+        rgba(73,217,255,.08);
+
+    box-shadow:
+
+        0 0 15px rgba(73,217,255,.25),
+        inset 0 0 15px rgba(73,217,255,.08);
+
+}
+
+.menu-btn:active{
+
+    transform:scale(.98);
+
+}
+
+/* =====================================================
+   MENU DECORATION
+===================================================== */
+
+.menu-container::before{
+
+    content:"SYSTEM INTERFACE";
+
+    display:block;
+
+    margin-bottom:15px;
+
+    font-size:12px;
+
+    letter-spacing:6px;
+
+    opacity:.45;
+
+}
+
+.menu-container::after{
+
+    content:"SELECT MODULE";
+
+    display:block;
+
+    margin-top:35px;
+
+    font-size:12px;
+
+    letter-spacing:4px;
+
+    opacity:.35;
+
+}
+
+/* =====================================================
+   MENU ANIMATION
+===================================================== */
+
+@keyframes menuFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes menuItemAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =====================================================
+   PART 2A END
+===================================================== */
