@@ -157,7 +157,24 @@ missionPage.style.display = "none";
         showNext();
 
     }
+    // ======================================
+    // MISSION PAGE
+    // ======================================
 
+function openMission() {
+
+    menu.style.display = "none";
+    missionPage.style.display = "block";
+
+}
+
+function closeMission() {
+
+    missionPage.style.display = "none";
+    menu.style.display = "flex";
+
+}
+    
     // ======================================
     // BUTTON
     // ======================================
