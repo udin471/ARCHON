@@ -39,7 +39,8 @@ if (!boot || !bootText || !enterBtn || !menu) {
 
     enterBtn.style.display = "none";
     menu.style.display = "none";
-
+missionPage.style.display = "none";
+    
     // ======================================
     // TYPEWRITER EFFECT
     // ======================================
