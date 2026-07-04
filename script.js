@@ -120,8 +120,7 @@ const menuItems = [
 ];
 
 function showMenu() {
-    bootText.style.display = "none";
-    enterBtn.style.display = "none";
+    document.getElementById("boot").style.display = "none";
 
     menu.innerHTML = "";
 
