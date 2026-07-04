@@ -121,3 +121,28 @@ const menuItems = [
 ];
 
 const menu = document.getElementById("menu");
+
+function showMenu() {
+    bootText.style.display = "none";
+    enterBtn.style.display = "none";
+
+    menu.innerHTML = "";
+
+    let index = 0;
+
+    function showNext() {
+        if (index >= menuItems.length) return;
+
+        let item = document.createElement("div");
+        item.className = "menu-item";
+        item.textContent = menuItems[index];
+
+        menu.appendChild(item);
+
+        index++;
+
+        setTimeout(showNext, 400); // efek muncul satu-satu
+    }
+
+    showNext();
+}
