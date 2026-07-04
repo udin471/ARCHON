@@ -146,3 +146,7 @@ function showMenu() {
 
     showNext();
 }
+
+enterBtn.addEventListener("click", () => {
+    showMenu();
+});
