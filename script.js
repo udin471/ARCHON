@@ -87,6 +87,30 @@ missionPage.style.display = "none";
     }
 
     // ======================================
+    // TERMINAL ENGINE
+    // ======================================
+
+function terminalDelay(ms) {
+
+    return new Promise(resolve => setTimeout(resolve, ms));
+
+}
+
+async function terminalType(element, text, speed = 40) {
+
+    element.textContent = "";
+
+    for (let i = 0; i < text.length; i++) {
+
+        element.textContent += text.charAt(i);
+
+        await terminalDelay(speed);
+
+    }
+
+}
+    
+    // ======================================
     // BOOT SEQUENCE
     // ======================================
 
