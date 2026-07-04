@@ -68,7 +68,7 @@ function typeWriter(text, callback){
 
                 }
 
-            },300);
+            }, 500);
 
         }
 
