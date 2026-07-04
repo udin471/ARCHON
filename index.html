@@ -10,8 +10,12 @@
 
 <body>
 
+<!-- =========================
+     BOOT SCREEN
+========================= -->
 <div id="boot">
-    <img src="assets/logo.png" alt="ARCHON Logo" class="logo">
+
+    <img src="assets/logo.png" class="logo" alt="ARCHON Logo">
 
     <h1>A.R.C.H.O.N.</h1>
 
@@ -20,25 +24,28 @@
     <p id="bootText" class="status">INITIALIZING...</p>
 
     <button id="enterBtn">ENTER DATABASE</button>
+
 </div>
 
+<!-- =========================
+     MAIN MENU
+========================= -->
 <div id="menu"></div>
-<!-- ========================= -->
-<!-- MISSION PAGE -->
-<!-- ========================= -->
 
+<!-- =========================
+     MISSION PAGE
+========================= -->
 <div id="missionPage" class="page">
 
-<!-- OLD MISSION CONTENT -->
-    
     <div class="page-header">
         <h2>MISSION</h2>
     </div>
 
     <div class="mission-content">
 
-<div id="missionTerminal"></div>
-        
+        <!-- Terminal output -->
+        <div id="missionTerminal"></div>
+
         <h3>CURRENT OBJECTIVE</h3>
         <p>Survive.</p>
 
@@ -65,34 +72,21 @@
         <br><br>
 
         <div class="nova-message">
-
             <h3>N.O.V.A</h3>
-
             <p>
-                Operator...
-                <br><br>
-
-                Communication with BlackOps Headquarters has been lost.
-                <br><br>
-
-                Current location cannot be identified.
-                <br><br>
-
+                Operator...<br><br>
+                Communication with BlackOps Headquarters has been lost.<br><br>
+                Current location cannot be identified.<br><br>
                 Proceed with extreme caution.
             </p>
-
         </div>
 
-<!-- END OLD MISSION CONTENT -->
-        
-        <button id="returnBtn">
-            RETURN
-        </button>
+        <button id="returnBtn">RETURN</button>
 
     </div>
-
 </div>
-    
+
+<!-- JS -->
 <script src="script.js"></script>
 
 </body>
