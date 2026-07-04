@@ -178,12 +178,6 @@ function closeMission() {
 
 }
 
-    function closeMission() {
-
-    missionPage.style.display = "none";
-    menu.style.display = "flex";
-
-    }
     // ======================================
     // BUTTON
     // ======================================
