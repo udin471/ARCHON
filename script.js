@@ -143,5 +143,7 @@ function showMenu() {
 }
 
 enterBtn.addEventListener("click", () => {
+    bootText.style.display = "none";
+    enterBtn.style.display = "none";
     showMenu();
 });
