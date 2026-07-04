@@ -63,3 +63,13 @@ button:hover{
     color:#05070d;
     box-shadow:0 0 20px #49d9ff;
 }
+
+.tagline{
+    margin-top:15px;
+    margin-bottom:25px;
+    font-size:14px;
+    letter-spacing:6px;
+    color:#8be9ff;
+    opacity:.8;
+    line-height:1.8;
+}
