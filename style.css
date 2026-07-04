@@ -1,1 +1,381 @@
+/* =====================================================
+   A.R.C.H.O.N.
+   Version 3.0
+   STYLE.CSS
+   PART 1
+   Global • Theme • Boot • Screen • Button
+===================================================== */
 
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* =====================================================
+   ROOT
+===================================================== */
+
+:root{
+
+    --bg:#05070d;
+    --panel:#0b101b;
+    --primary:#49d9ff;
+    --secondary:#6ef5ff;
+    --text:#d9faff;
+    --border:#1f5d75;
+
+    --transition:.45s;
+    --radius:10px;
+
+}
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body{
+
+    background:var(--bg);
+    color:var(--primary);
+
+    font-family:Consolas, monospace;
+
+    width:100%;
+    height:100vh;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+/* =====================================================
+   BACKGROUND GRID
+===================================================== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background-image:
+
+    linear-gradient(rgba(73,217,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(73,217,255,.04) 1px, transparent 1px);
+
+    background-size:40px 40px;
+
+    pointer-events:none;
+
+    z-index:-2;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at center,
+    rgba(73,217,255,.05),
+    transparent 70%);
+
+    z-index:-1;
+
+    pointer-events:none;
+
+}
+
+/* =====================================================
+   SCREEN SYSTEM
+===================================================== */
+
+.screen{
+
+    position:absolute;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:40px;
+
+    opacity:0;
+
+    transition:
+
+    opacity .45s ease,
+    transform .45s ease;
+
+    transform:scale(.98);
+
+}
+
+.screen.active{
+
+    display:flex;
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+/* =====================================================
+   BOOT
+===================================================== */
+
+.boot-container{
+
+    width:100%;
+    max-width:760px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+}
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo{
+
+    width:180px;
+
+    margin-bottom:30px;
+
+    user-select:none;
+
+    animation:
+
+    logoPulse 3s ease-in-out infinite;
+
+}
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.title{
+
+    font-size:60px;
+
+    letter-spacing:10px;
+
+    color:var(--primary);
+
+    text-shadow:
+
+    0 0 8px var(--primary),
+    0 0 20px var(--primary),
+    0 0 45px rgba(73,217,255,.45);
+
+}
+
+.tagline{
+
+    margin-top:20px;
+
+    margin-bottom:35px;
+
+    line-height:2;
+
+    letter-spacing:8px;
+
+    opacity:.8;
+
+    font-size:13px;
+
+}
+
+/* =====================================================
+   TERMINAL
+===================================================== */
+
+.terminal{
+
+    width:100%;
+
+    min-height:170px;
+
+    border:
+
+    1px solid var(--border);
+
+    background:
+
+    rgba(0,0,0,.30);
+
+    padding:20px;
+
+    overflow:hidden;
+
+    backdrop-filter:blur(3px);
+
+    box-shadow:
+
+    inset 0 0 25px rgba(73,217,255,.08),
+    0 0 25px rgba(73,217,255,.06);
+
+    margin-bottom:30px;
+
+    white-space:pre-wrap;
+
+    line-height:1.8;
+
+}
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+button{
+
+    cursor:pointer;
+
+    padding:14px 34px;
+
+    border-radius:var(--radius);
+
+    border:2px solid var(--primary);
+
+    background:transparent;
+
+    color:var(--primary);
+
+    font-family:inherit;
+
+    letter-spacing:2px;
+
+    font-size:15px;
+
+    transition:
+
+    .25s;
+
+}
+
+button:hover{
+
+    background:var(--primary);
+
+    color:black;
+
+    box-shadow:
+
+    0 0 15px var(--primary),
+    0 0 40px rgba(73,217,255,.5);
+
+    transform:translateY(-2px);
+
+}
+
+button:active{
+
+    transform:scale(.96);
+
+}
+
+/* =====================================================
+   ENTER BUTTON
+===================================================== */
+
+#enterButton{
+
+    display:none;
+
+}
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.hidden{
+
+    display:none;
+
+}
+
+/* =====================================================
+   TRANSITION LAYER
+===================================================== */
+
+#transition{
+
+    position:fixed;
+
+    inset:0;
+
+    background:black;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:opacity .45s;
+
+    z-index:999;
+
+}
+
+#transition.active{
+
+    opacity:1;
+
+}
+
+/* =====================================================
+   SCANLINE
+===================================================== */
+
+.scanline{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+
+    repeating-linear-gradient(
+
+        to bottom,
+
+        transparent 0px,
+        transparent 3px,
+
+        rgba(73,217,255,.03) 4px
+
+    );
+
+    opacity:.35;
+
+    animation:
+
+    scanMove 8s linear infinite;
+
+}
+
+/* =====================================================
+   PART 1 END
+===================================================== */
