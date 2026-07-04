@@ -23,8 +23,8 @@ const bootMessages = [
     "WELCOME ARCHON"
 ];
 
-const typingSpeed = 150;
-const waitAfterMessage = 1500;
+const typingSpeed = 120;
+const waitAfterMessage = 1200;
 
 // ======================================
 // INITIAL STATE
