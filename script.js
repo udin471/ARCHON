@@ -55,22 +55,17 @@ function typeWriter(text, callback){
             let dots = 0;
 
             const dotAnimation = setInterval(() => {
+    dots++;
 
-                dots++;
+    bootText.textContent = text + ".".repeat(dots);
 
-                bootText.textContent = text + ".".repeat(dots);
+    if (dots >= 3) {
+        clearInterval(dotAnimation);
 
-                if(dots >= 3){
-    setTimeout(callback, waitAfterMessage + 600);
-                }
+        setTimeout(callback, waitAfterMessage + 600);
+    }
 
-                    clearInterval(dotAnimation);
-
-                    setTimeout(callback, waitAfterMessage);
-
-                }
-
-            }, 500);
+}, 500);
 
         }
 
