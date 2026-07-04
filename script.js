@@ -147,3 +147,7 @@ enterBtn.addEventListener("click", () => {
     enterBtn.style.display = "none";
     showMenu();
 });
+
+setTimeout(() => {
+    console.log("SCRIPT STILL RUNNING");
+}, 3000);
