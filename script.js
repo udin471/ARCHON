@@ -199,7 +199,11 @@ function closeMission() {
     // ======================================
     // START SYSTEM
     // ======================================
+if (returnBtn) {
 
+    returnBtn.addEventListener("click", closeMission);
+
+}
     bootSequence();
 
     console.log("ARCHON SYSTEM READY");
