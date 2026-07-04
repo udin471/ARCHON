@@ -193,7 +193,8 @@ async function openMission() {
 
     menu.style.display = "none";
     missionPage.style.display = "block";
-
+console.log(missionTerminal);
+    
     missionTerminal.innerHTML = "";
 
     const line = document.createElement("p");
