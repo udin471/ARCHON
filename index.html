@@ -1,225 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>A.R.C.H.O.N.</title>
 
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-<!-- ======================================================
-     BOOT SCREEN
-====================================================== -->
+<div id="boot">
+    <img src="assets/logo.png" alt="ARCHON Logo" class="logo">
 
-<section id="bootScreen" class="screen active">
+    <h1>A.R.C.H.O.N.</h1>
 
-    <div class="boot-container">
+    <p class="tagline">ONE MIND<br>TWO EXISTENCES</p>
 
-        <img
-            src="assets/logo.png"
-            alt="ARCHON Logo"
-            class="logo">
+    <p id="bootText" class="status">INITIALIZING...</p>
 
-        <h1 class="title">
-            A.R.C.H.O.N.
-        </h1>
+    <button id="enterBtn">ENTER DATABASE</button>
+</div>
 
-        <p class="tagline">
-            ONE MIND<br>
-            TWO EXISTENCES
-        </p>
+<div id="menu"></div>
+<!-- ========================= -->
+<!-- MISSION PAGE -->
+<!-- ========================= -->
 
-        <div id="bootTerminal" class="terminal"></div>
+<div id="missionPage" class="page">
 
-        <button id="enterButton">
-            ENTER DATABASE
-        </button>
-
+    <div class="page-header">
+        <h2>MISSION</h2>
     </div>
 
-</section>
+    <div class="mission-content">
 
-<!-- ======================================================
-     TRANSITION
-====================================================== -->
+        <h3>CURRENT OBJECTIVE</h3>
+        <p>Survive.</p>
 
-<div id="transition"></div>
+        <br>
 
-<!-- ======================================================
-     MAIN MENU
-====================================================== -->
+        <h3>STATUS</h3>
+        <p>ACTIVE</p>
 
-<section id="menuScreen" class="screen">
+        <br>
 
-    <div class="menu-container">
+        <h3>LOCATION</h3>
+        <p>UNKNOWN CITY</p>
 
-        <h2>MAIN MENU</h2>
+        <br>
 
-        <div id="menuList">
+        <h3>OPERATOR</h3>
+        <p>A.R.C.H.O.N</p>
 
-            <button class="menu-btn" data-page="mission">
-                MISSION
-            </button>
+        <br>
 
-            <button class="menu-btn" data-page="place">
-                PLACE
-            </button>
+        <h3>SUPPORT AI</h3>
+        <p>N.O.V.A</p>
 
-            <button class="menu-btn" data-page="database">
-                DATABASE
-            </button>
+        <br><br>
 
-            <button class="menu-btn" data-page="archive">
-                ARCHIVE
-            </button>
+        <div class="nova-message">
 
-            <button class="menu-btn" data-page="settings">
-                SETTINGS
-            </button>
+            <h3>N.O.V.A</h3>
+
+            <p>
+                Operator...
+                <br><br>
+
+                Communication with BlackOps Headquarters has been lost.
+                <br><br>
+
+                Current location cannot be identified.
+                <br><br>
+
+                Proceed with extreme caution.
+            </p>
 
         </div>
 
-    </div>
-
-</section>
-
-<!-- ======================================================
-     MISSION
-====================================================== -->
-
-<section id="missionScreen" class="screen">
-
-    <div class="page-container">
-
-        <div id="missionTerminal" class="terminal"></div>
-
-        <div id="missionContent" class="content hidden">
-
-            <!-- Akan diisi JavaScript -->
-
-        </div>
-
-        <button class="backButton">
+        <button id="returnBtn">
             RETURN
         </button>
 
     </div>
 
-</section>
-
-<!-- ======================================================
-     PLACE
-====================================================== -->
-
-<section id="placeScreen" class="screen">
-
-    <div class="page-container">
-
-        <div class="terminal">
-
-            PLACE DATABASE NOT AVAILABLE
-
-        </div>
-
-        <button class="backButton">
-            RETURN
-        </button>
-
-    </div>
-
-</section>
-
-<!-- ======================================================
-     DATABASE
-====================================================== -->
-
-<section id="databaseScreen" class="screen">
-
-    <div class="page-container">
-
-        <div class="terminal">
-
-            DATABASE LOCKED
-
-        </div>
-
-        <button class="backButton">
-            RETURN
-        </button>
-
-    </div>
-
-</section>
-
-<!-- ======================================================
-     ARCHIVE
-====================================================== -->
-
-<section id="archiveScreen" class="screen">
-
-    <div class="page-container">
-
-        <div class="terminal">
-
-            ARCHIVE EMPTY
-
-        </div>
-
-        <button class="backButton">
-            RETURN
-        </button>
-
-    </div>
-
-</section>
-
-<!-- ======================================================
-     SETTINGS
-====================================================== -->
-
-<section id="settingsScreen" class="screen">
-
-    <div class="page-container">
-
-        <div class="terminal">
-
-            SETTINGS MODULE
-
-        </div>
-
-        <button class="backButton">
-            RETURN
-        </button>
-
-    </div>
-
-</section>
-
-<!-- ======================================================
-     AUDIO
-====================================================== -->
-
-<audio
-    id="typingSound"
-    preload="auto">
-</audio>
-
-<audio
-    id="clickSound"
-    preload="auto">
-</audio>
-
-<!-- ======================================================
-     SCRIPT
-====================================================== -->
-
+</div>
+    
 <script src="script.js"></script>
 
 </body>
