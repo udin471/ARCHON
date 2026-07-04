@@ -142,6 +142,9 @@ if (!boot || !bootText || !enterBtn || !menu) {
             item.className = "menu-item";
             item.textContent = menuItems[index];
 
+            if (menuItems[index] === "MISSION") {
+    item.addEventListener("click", openMission);
+}
             menu.appendChild(item);
 
             index++;
