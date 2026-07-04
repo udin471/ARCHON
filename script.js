@@ -107,7 +107,9 @@ function bootSequence(){
 
 bootSequence();
 
-const menu = document.getElementById("menu");
+const menu = document.getElementById("menu") || document.createElement("div");
+menu.id = "menu";
+document.body.appendChild(menu);
 
 const menuItems = [
     "MISSION",
