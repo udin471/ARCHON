@@ -1,280 +1,196 @@
 // ======================================
-// A.R.C.H.O.N. Website
-// Version 2.1
+// A.R.C.H.O.N. SYSTEM v2.1 FIXED
 // ======================================
 
-// ======================================
 // ELEMENTS
-// ======================================
-
 const boot = document.getElementById("boot");
 const bootText = document.getElementById("bootText");
 const enterBtn = document.getElementById("enterBtn");
 const menu = document.getElementById("menu");
 const missionPage = document.getElementById("missionPage");
 const returnBtn = document.getElementById("returnBtn");
-// Pastikan semua elemen ditemukan
 const missionTerminal = document.getElementById("missionTerminal");
+
+// SAFETY CHECK
 if (!boot || !bootText || !enterBtn || !menu) {
-    console.error("ARCHON ERROR: Ada elemen HTML yang tidak ditemukan.");
-} else {
-
-    // ======================================
-    // SETTINGS
-    // ======================================
-
-    const bootMessages = [
-        "BOOTING SYSTEM",
-        "CHECKING MEMORY",
-        "MEMORY CORRUPTED",
-        "CONNECTING TO N.O.V.A",
-        "LINK ESTABLISHED",
-        "WELCOME ARCHON"
-    ];
-
-    const typingSpeed = 160;
-    const waitAfterMessage = 1200;
-
-    // ======================================
-    // INITIAL STATE
-    // ======================================
-
-    enterBtn.style.display = "none";
-    menu.style.display = "none";
-missionPage.style.display = "none";
-    
-    // ======================================
-    // TYPEWRITER EFFECT
-    // ======================================
-
-    function typeWriter(text, callback) {
-
-        let index = 0;
-
-        bootText.textContent = "";
-
-        const typing = setInterval(() => {
-
-            bootText.textContent += text.charAt(index);
-
-            index++;
-
-            if (index >= text.length) {
-
-                clearInterval(typing);
-
-                let dots = 0;
-
-                const dotAnimation = setInterval(() => {
-
-                    dots++;
-
-                    bootText.textContent = text + ".".repeat(dots);
-
-                    if (dots >= 3) {
-
-                        clearInterval(dotAnimation);
-
-                        setTimeout(callback, waitAfterMessage + 600);
-
-                    }
-
-                }, 500);
-
-            }
-
-        }, typingSpeed);
-
-    }
-
-    // ======================================
-    // TERMINAL ENGINE
-    // ======================================
-
-function terminalDelay(ms) {
-
-    return new Promise(resolve => setTimeout(resolve, ms));
-
+    console.error("ARCHON ERROR: Missing core elements");
 }
 
-async function terminalType(element, text, speed = 40) {
+// ======================
+// SETTINGS
+// ======================
+const bootMessages = [
+    "BOOTING SYSTEM",
+    "CHECKING MEMORY",
+    "MEMORY CORRUPTED",
+    "CONNECTING TO N.O.V.A",
+    "LINK ESTABLISHED",
+    "WELCOME ARCHON"
+];
 
+const typingSpeed = 120;
+const waitAfterMessage = 800;
+
+// ======================
+// INITIAL STATE
+// ======================
+enterBtn.style.display = "none";
+menu.style.display = "none";
+missionPage.style.display = "none";
+
+// ======================
+// TYPEWRITER
+// ======================
+function typeWriter(text, callback) {
+    let i = 0;
+    bootText.textContent = "";
+
+    const interval = setInterval(() => {
+        bootText.textContent += text.charAt(i);
+        i++;
+
+        if (i >= text.length) {
+            clearInterval(interval);
+
+            setTimeout(() => {
+                callback && callback();
+            }, waitAfterMessage);
+        }
+    }, typingSpeed);
+}
+
+// ======================
+// BOOT SEQUENCE
+// ======================
+let currentMessage = 0;
+
+function bootSequence() {
+    if (currentMessage >= bootMessages.length) {
+        bootText.textContent = "SYSTEM READY";
+        enterBtn.style.display = "inline-block";
+        return;
+    }
+
+    typeWriter(bootMessages[currentMessage], () => {
+        currentMessage++;
+        bootSequence();
+    });
+}
+
+// ======================
+// MENU SYSTEM
+// ======================
+const menuItems = [
+    "MISSION",
+    "PLACE",
+    "DATABASE",
+    "ARCHIVE",
+    "SETTINGS"
+];
+
+function showMenu() {
+    boot.style.display = "none";
+    menu.style.display = "flex";
+    menu.innerHTML = "";
+
+    let i = 0;
+
+    function spawnItem() {
+        if (i >= menuItems.length) return;
+
+        const item = document.createElement("div");
+        item.className = "menu-item";
+        item.textContent = menuItems[i];
+
+        if (menuItems[i] === "MISSION") {
+            item.addEventListener("click", openMission);
+        }
+
+        menu.appendChild(item);
+        i++;
+
+        setTimeout(spawnItem, 300);
+    }
+
+    spawnItem();
+}
+
+// ======================
+// TERMINAL ENGINE
+// ======================
+function delay(ms) {
+    return new Promise(res => setTimeout(res, ms));
+}
+
+async function typeLine(element, text, speed = 30) {
     element.textContent = "";
 
     for (let i = 0; i < text.length; i++) {
-
-        element.textContent += text.charAt(i);
-
-        await terminalDelay(speed);
-
+        element.textContent += text[i];
+        await delay(speed);
     }
-
 }
 
-    async function terminalPrint(lines) {
+async function terminalPrint(lines) {
+    if (!missionTerminal) return;
 
     missionTerminal.innerHTML = "";
 
-    for (const text of lines) {
+    for (const line of lines) {
+        const p = document.createElement("p");
+        missionTerminal.appendChild(p);
 
-        const line = document.createElement("p");
-
-        missionTerminal.appendChild(line);
-
-        if (text === "") {
-
-            await terminalDelay(300);
-
+        if (line === "") {
+            await delay(200);
             continue;
-
         }
 
-        await terminalType(line, text);
-
-        await terminalDelay(350);
-
+        await typeLine(p, line);
+        await delay(250);
     }
-
-    // ======================================
-    // BOOT SEQUENCE
-    // ======================================
-
-    let currentMessage = 0;
-
-    function bootSequence() {
-
-        if (currentMessage >= bootMessages.length) {
-
-            bootText.textContent = "SYSTEM READY";
-
-            enterBtn.style.display = "inline-block";
-
-            return;
-
-        }
-
-        typeWriter(bootMessages[currentMessage], () => {
-
-            currentMessage++;
-
-            bootSequence();
-
-        });
-
-    }
-
-    // ======================================
-    // MENU
-    // ======================================
-
-    const menuItems = [
-        "MISSION",
-        "PLACE",
-        "DATABASE",
-        "ARCHIVE",
-        "SETTINGS"
-    ];
-
-    function showMenu() {
-
-        boot.style.display = "none";
-
-        menu.style.display = "flex";
-        menu.innerHTML = "";
-
-        let index = 0;
-
-        function showNext() {
-
-            if (index >= menuItems.length) return;
-
-            const item = document.createElement("div");
-
-            item.className = "menu-item";
-            item.textContent = menuItems[index];
-if (menuItems[index] === "MISSION") {
-
-    item.addEventListener("click", openMission);
-
 }
-            
-            menu.appendChild(item);
 
-            index++;
-
-            setTimeout(showNext, 400);
-
-        }
-
-        showNext();
-
-    }
-    // ======================================
-    // MISSION PAGE
-    // ======================================
-
+// ======================
+// MISSION PAGE
+// ======================
 async function openMission() {
-
     menu.style.display = "none";
-    missionPage.style.display = "block";
+    missionPage.style.display = "flex";
 
-    const missionLines = [
-
+    const lines = [
         "> INITIALIZING MISSION TERMINAL...",
-
         "> ACCESS GRANTED",
-
         "> N.O.V.A ONLINE",
-
         "",
-
         "Commander...",
-
         "",
-
         "Scanning mission database...",
-
         "",
-
         "No active mission found.",
-
         "",
-
         "Awaiting deployment..."
-
     ];
 
-    await terminalPrint(missionLines);
-
+    await terminalPrint(lines);
 }
 
 function closeMission() {
-
     missionPage.style.display = "none";
     menu.style.display = "flex";
-
 }
 
-    // ======================================
-    // BUTTON
-    // ======================================
+// ======================
+// EVENTS
+// ======================
+enterBtn.addEventListener("click", showMenu);
 
-    enterBtn.addEventListener("click", () => {
-
-        showMenu();
-
-    });
-
-    // ======================================
-    // START SYSTEM
-    // ======================================
 if (returnBtn) {
-
     returnBtn.addEventListener("click", closeMission);
-
 }
-    bootSequence();
 
-    console.log("ARCHON SYSTEM READY");
+// ======================
+// START
+// ======================
+bootSequence();
 
-}
+console.log("ARCHON SYSTEM READY");
