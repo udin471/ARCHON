@@ -1,264 +1,171 @@
 /* ======================================
-   A.R.C.H.O.N. Website
-   Version 2.1
+   A.R.C.H.O.N. SYSTEM v2.1 FIXED
 ====================================== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    background:#05070d;
-    color:#49d9ff;
-    font-family:Consolas, monospace;
+body {
+    background: #05070d;
+    color: #49d9ff;
+    font-family: Consolas, monospace;
 
-    display:block;
-
-    min-height:100vh;
-    overflow:hidden;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
-/* ======================================
+/* ======================
    BOOT SCREEN
-====================================== */
+====================== */
 
-#boot{
-    text-align:center;
+#boot {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
 }
 
-#boot h1{
-    font-size:3rem;
-    letter-spacing:8px;
-    text-shadow:
-        0 0 10px #49d9ff,
-        0 0 20px #49d9ff;
-
-    margin-bottom:20px;
+#boot h1 {
+    font-size: 3rem;
+    letter-spacing: 8px;
+    text-shadow: 0 0 10px #49d9ff, 0 0 20px #49d9ff;
+    margin-bottom: 20px;
 }
 
-#boot p{
-    font-size:1.1rem;
-    letter-spacing:4px;
-    opacity:.9;
+.logo {
+    width: 180px;
+    margin-bottom: 25px;
+    animation: pulse 2s infinite ease-in-out;
 }
 
-.logo{
-    width:180px;
-    margin-bottom:25px;
-    animation:pulse 2s infinite ease-in-out;
+.tagline {
+    margin: 15px 0 25px;
+    font-size: 14px;
+    letter-spacing: 6px;
+    line-height: 1.8;
+    opacity: 0.8;
 }
 
-.tagline{
-    margin-top:15px;
-    margin-bottom:25px;
-
-    font-size:14px;
-    letter-spacing:6px;
-    line-height:1.8;
-
-    color:#8be9ff;
-    opacity:.8;
+.status {
+    margin-bottom: 30px;
 }
 
-.status{
-    margin-bottom:30px;
+/* BUTTON */
+button {
+    background: transparent;
+    color: #49d9ff;
+    border: 2px solid #49d9ff;
+    border-radius: 8px;
+    padding: 12px 30px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-/* ======================================
-   BUTTON
-====================================== */
-
-button{
-    background:transparent;
-    color:#49d9ff;
-
-    border:2px solid #49d9ff;
-    border-radius:8px;
-
-    padding:12px 30px;
-
-    font-size:16px;
-    cursor:pointer;
-
-    transition:0.3s;
+button:hover {
+    background: #49d9ff;
+    color: #05070d;
+    box-shadow: 0 0 20px #49d9ff;
 }
 
-button:hover{
-    background:#49d9ff;
-    color:#05070d;
+/* ======================
+   MENU
+====================== */
 
-    box-shadow:0 0 20px #49d9ff;
+#menu {
+    position: fixed;
+    inset: 0;
+
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    background: #05070d;
 }
 
-/* ======================================
-   LOGO ANIMATION
-====================================== */
+.menu-item {
+    font-size: 22px;
+    letter-spacing: 4px;
+    cursor: pointer;
 
-@keyframes pulse{
-
-    0%{
-        transform:scale(1);
-        filter:drop-shadow(0 0 5px #49d9ff);
-    }
-
-    50%{
-        transform:scale(1.05);
-        filter:drop-shadow(0 0 25px #49d9ff);
-    }
-
-    100%{
-        transform:scale(1);
-        filter:drop-shadow(0 0 5px #49d9ff);
-    }
-
+    opacity: 0;
+    animation: fadeIn 0.4s forwards;
 }
 
-/* ======================================
-   MAIN MENU
-====================================== */
-
-#menu{
-
-    position:fixed;
-    inset:0;
-
-    display:none;
-
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    gap:20px;
-
-    background:#05070d;
-
-    color:#49d9ff;
-    font-family:Consolas, monospace;
-
-    z-index:1000;
+.menu-item:hover {
+    color: white;
+    text-shadow: 0 0 10px #49d9ff;
+    transform: scale(1.05);
 }
 
-.menu-item{
-
-    font-size:22px;
-
-    letter-spacing:4px;
-
-    cursor:pointer;
-
-    opacity:0;
-
-    animation:fadeIn .5s forwards;
-
-    transition:.3s;
-}
-
-.menu-item:hover{
-
-    color:white;
-
-    text-shadow:
-        0 0 10px #49d9ff,
-        0 0 20px #49d9ff;
-
-    transform:scale(1.05);
-}
-
-/* ======================================
-   MENU ANIMATION
-====================================== */
-
-@keyframes fadeIn{
-
-    from{
-        opacity:0;
-        transform:translateY(15px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
-}
-
-/* ======================================
+/* ======================
    MISSION PAGE
-====================================== */
+====================== */
 
-.page{
+.page {
+    position: fixed;
+    inset: 0;
 
-    position:fixed;
-    inset:0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    display:none;
-
-    justify-content:center;
-    align-items:center;
-
-    background:#05070d;
-
-    color:#49d9ff;
-
-    overflow-y:auto;
-
-    padding:40px;
-
+    background: #05070d;
+    padding: 40px;
+    overflow-y: auto;
 }
 
-.page-header{
-
-    text-align:center;
-
-    margin-bottom:30px;
-
+.page-header h2 {
+    font-size: 32px;
+    letter-spacing: 6px;
+    margin-bottom: 20px;
 }
 
-.page-header h2{
-
-    font-size:32px;
-
-    letter-spacing:6px;
-
+.mission-content {
+    max-width: 700px;
+    width: 100%;
 }
 
-.mission-content{
-
-    width:100%;
-    max-width:700px;
-
+#missionTerminal {
+    margin-bottom: 30px;
+    line-height: 1.8;
 }
 
-#missionTerminal{
-
-    margin-bottom:30px;
-
-    line-height:1.8;
-
-    white-space:pre-wrap;
-
+#missionTerminal p {
+    margin: 6px 0;
 }
 
-#missionTerminal p{
-
-    margin:8px 0;
-
+#returnBtn {
+    margin-top: 40px;
 }
 
-.nova-message{
+/* ======================
+   ANIMATIONS
+====================== */
 
-    margin-top:30px;
-
-    border-left:2px solid #49d9ff;
-
-    padding-left:20px;
-
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
-#returnBtn{
-
-    margin-top:40px;
-
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
