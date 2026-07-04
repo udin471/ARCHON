@@ -1,5 +1,18 @@
+// ======================================
+// A.R.C.H.O.N. Website
+// Version 2.0
+// ======================================
+
+// ======================================
+// ELEMENTS
+// ======================================
+
 const bootText = document.getElementById("bootText");
 const enterBtn = document.getElementById("enterBtn");
+
+// ======================================
+// SETTINGS
+// ======================================
 
 const bootMessages = [
     "BOOTING SYSTEM",
@@ -10,45 +23,89 @@ const bootMessages = [
     "WELCOME ARCHON"
 ];
 
+const typingSpeed = 70;
+const waitAfterMessage = 800;
+
+// ======================================
+// INITIAL STATE
+// ======================================
+
 enterBtn.style.display = "none";
 
-let messageIndex = 0;
-let dots = 0;
+// ======================================
+// TYPEWRITER EFFECT
+// ======================================
 
-function showMessage(){
+function typeWriter(text, callback){
 
-    if(messageIndex >= bootMessages.length){
+    let index = 0;
+
+    bootText.textContent = "";
+
+    const typing = setInterval(() => {
+
+        bootText.textContent += text.charAt(index);
+
+        index++;
+
+        if(index >= text.length){
+
+            clearInterval(typing);
+
+            let dots = 0;
+
+            const dotAnimation = setInterval(() => {
+
+                dots++;
+
+                bootText.textContent = text + ".".repeat(dots);
+
+                if(dots >= 3){
+
+                    clearInterval(dotAnimation);
+
+                    setTimeout(callback, waitAfterMessage);
+
+                }
+
+            },300);
+
+        }
+
+    },typingSpeed);
+
+}
+
+// ======================================
+// BOOT SEQUENCE
+// ======================================
+
+let currentMessage = 0;
+
+function bootSequence(){
+
+    if(currentMessage >= bootMessages.length){
 
         bootText.textContent = "SYSTEM READY";
 
         enterBtn.style.display = "inline-block";
 
         return;
+
     }
 
-    let current = bootMessages[messageIndex];
+    typeWriter(bootMessages[currentMessage], () => {
 
-    dots = 0;
+        currentMessage++;
 
-    const animation = setInterval(()=>{
+        bootSequence();
 
-        dots++;
-
-        if(dots > 3){
-
-            clearInterval(animation);
-
-            messageIndex++;
-
-            setTimeout(showMessage,400);
-
-            return;
-        }
-
-        bootText.textContent = current + ".".repeat(dots);
-
-    },500);
+    });
 
 }
 
-showMessage();
+// ======================================
+// START SYSTEM
+// ======================================
+
+bootSequence();
