@@ -149,9 +149,6 @@ if (menuItems[index] === "MISSION") {
 
 }
             
-            if (menuItems[index] === "MISSION") {
-    item.addEventListener("click", openMission);
-}
             menu.appendChild(item);
 
             index++;
