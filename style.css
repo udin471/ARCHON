@@ -185,3 +185,82 @@ button:hover{
     }
 
 }
+
+/* ======================================
+   MISSION PAGE
+====================================== */
+
+.page{
+
+    position:fixed;
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    background:#05070d;
+
+    color:#49d9ff;
+
+    overflow-y:auto;
+
+    padding:40px;
+
+}
+
+.page-header{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+.page-header h2{
+
+    font-size:32px;
+
+    letter-spacing:6px;
+
+}
+
+.mission-content{
+
+    width:100%;
+    max-width:700px;
+
+}
+
+#missionTerminal{
+
+    margin-bottom:30px;
+
+    line-height:1.8;
+
+    white-space:pre-wrap;
+
+}
+
+#missionTerminal p{
+
+    margin:8px 0;
+
+}
+
+.nova-message{
+
+    margin-top:30px;
+
+    border-left:2px solid #49d9ff;
+
+    padding-left:20px;
+
+}
+
+#returnBtn{
+
+    margin-top:40px;
+
+}
