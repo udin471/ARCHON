@@ -11,7 +11,8 @@ const boot = document.getElementById("boot");
 const bootText = document.getElementById("bootText");
 const enterBtn = document.getElementById("enterBtn");
 const menu = document.getElementById("menu");
-
+const missionPage = document.getElementById("missionPage");
+const returnBtn = document.getElementById("returnBtn");
 // Pastikan semua elemen ditemukan
 if (!boot || !bootText || !enterBtn || !menu) {
     console.error("ARCHON ERROR: Ada elemen HTML yang tidak ditemukan.");
