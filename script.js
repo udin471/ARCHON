@@ -153,3 +153,7 @@ enterBtn.addEventListener("click", () => {
 setTimeout(() => {
     console.log("SCRIPT STILL RUNNING");
 }, 3000);
+
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("ARCHON SYSTEM READY");
+});
