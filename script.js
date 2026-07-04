@@ -1,158 +1,175 @@
 // ======================================
 // A.R.C.H.O.N. Website
-// Version 2.0
+// Version 2.1
 // ======================================
 
 // ======================================
 // ELEMENTS
 // ======================================
 
+const boot = document.getElementById("boot");
 const bootText = document.getElementById("bootText");
 const enterBtn = document.getElementById("enterBtn");
+const menu = document.getElementById("menu");
 
-// ======================================
-// SETTINGS
-// ======================================
+// Pastikan semua elemen ditemukan
+if (!boot || !bootText || !enterBtn || !menu) {
+    console.error("ARCHON ERROR: Ada elemen HTML yang tidak ditemukan.");
+} else {
 
-const bootMessages = [
-    "BOOTING SYSTEM",
-    "CHECKING MEMORY",
-    "MEMORY CORRUPTED",
-    "CONNECTING TO N.O.V.A",
-    "LINK ESTABLISHED",
-    "WELCOME ARCHON"
-];
+    // ======================================
+    // SETTINGS
+    // ======================================
 
-const typingSpeed = 160; // lebih lambat, lebih tegang
-const waitAfterMessage = 1200;
+    const bootMessages = [
+        "BOOTING SYSTEM",
+        "CHECKING MEMORY",
+        "MEMORY CORRUPTED",
+        "CONNECTING TO N.O.V.A",
+        "LINK ESTABLISHED",
+        "WELCOME ARCHON"
+    ];
 
-// ======================================
-// INITIAL STATE
-// ======================================
+    const typingSpeed = 160;
+    const waitAfterMessage = 1200;
 
-enterBtn.style.display = "none";
+    // ======================================
+    // INITIAL STATE
+    // ======================================
 
-// ======================================
-// TYPEWRITER EFFECT
-// ======================================
+    enterBtn.style.display = "none";
+    menu.style.display = "none";
 
-function typeWriter(text, callback){
+    // ======================================
+    // TYPEWRITER EFFECT
+    // ======================================
 
-    let index = 0;
+    function typeWriter(text, callback) {
 
-    bootText.textContent = "";
+        let index = 0;
 
-    const typing = setInterval(() => {
+        bootText.textContent = "";
 
-        bootText.textContent += text.charAt(index);
+        const typing = setInterval(() => {
 
-        index++;
+            bootText.textContent += text.charAt(index);
 
-        if(index >= text.length){
+            index++;
 
-            clearInterval(typing);
+            if (index >= text.length) {
 
-            let dots = 0;
+                clearInterval(typing);
 
-            const dotAnimation = setInterval(() => {
-    dots++;
+                let dots = 0;
 
-    bootText.textContent = text + ".".repeat(dots);
+                const dotAnimation = setInterval(() => {
 
-    if (dots >= 3) {
-        clearInterval(dotAnimation);
+                    dots++;
 
-        setTimeout(callback, waitAfterMessage + 600);
+                    bootText.textContent = text + ".".repeat(dots);
+
+                    if (dots >= 3) {
+
+                        clearInterval(dotAnimation);
+
+                        setTimeout(callback, waitAfterMessage + 600);
+
+                    }
+
+                }, 500);
+
+            }
+
+        }, typingSpeed);
+
     }
 
-}, 500);
+    // ======================================
+    // BOOT SEQUENCE
+    // ======================================
+
+    let currentMessage = 0;
+
+    function bootSequence() {
+
+        if (currentMessage >= bootMessages.length) {
+
+            bootText.textContent = "SYSTEM READY";
+
+            enterBtn.style.display = "inline-block";
+
+            return;
 
         }
 
-    },typingSpeed);
+        typeWriter(bootMessages[currentMessage], () => {
 
-}
+            currentMessage++;
 
-// ======================================
-// BOOT SEQUENCE
-// ======================================
+            bootSequence();
 
-let currentMessage = 0;
-
-function bootSequence(){
-
-    if(currentMessage >= bootMessages.length){
-
-        bootText.textContent = "SYSTEM READY";
-
-        enterBtn.style.display = "inline-block";
-
-        return;
+        });
 
     }
 
-    typeWriter(bootMessages[currentMessage], () => {
+    // ======================================
+    // MENU
+    // ======================================
 
-        currentMessage++;
+    const menuItems = [
+        "MISSION",
+        "PLACE",
+        "DATABASE",
+        "ARCHIVE",
+        "SETTINGS"
+    ];
 
-        bootSequence();
+    function showMenu() {
+
+        boot.style.display = "none";
+
+        menu.style.display = "flex";
+        menu.innerHTML = "";
+
+        let index = 0;
+
+        function showNext() {
+
+            if (index >= menuItems.length) return;
+
+            const item = document.createElement("div");
+
+            item.className = "menu-item";
+            item.textContent = menuItems[index];
+
+            menu.appendChild(item);
+
+            index++;
+
+            setTimeout(showNext, 400);
+
+        }
+
+        showNext();
+
+    }
+
+    // ======================================
+    // BUTTON
+    // ======================================
+
+    enterBtn.addEventListener("click", () => {
+
+        showMenu();
 
     });
 
-}
+    // ======================================
+    // START SYSTEM
+    // ======================================
 
-// ======================================
-// START SYSTEM
-// ======================================
+    bootSequence();
 
-bootSequence();
-
-const menu = document.getElementById("menu") || document.createElement("div");
-menu.id = "menu";
-document.body.appendChild(menu);
-
-const menuItems = [
-    "MISSION",
-    "PLACE",
-    "DATABASE",
-    "ARCHIVE",
-    "SETTINGS"
-];
-
-function showMenu() {
-    document.getElementById("boot").style.display = "none";
-
-    menu.innerHTML = "";
-
-    let index = 0;
-
-    function showNext() {
-        if (index >= menuItems.length) return;
-
-        let item = document.createElement("div");
-        item.className = "menu-item";
-        item.textContent = menuItems[index];
-
-        menu.appendChild(item);
-
-        index++;
-
-        setTimeout(showNext, 400); // efek muncul satu-satu
-    }
-
-    showNext();
-}
-
-enterBtn.addEventListener("click", () => {
-    bootText.style.display = "none";
-    enterBtn.style.display = "none";
-    showMenu();
-});
-
-setTimeout(() => {
-    console.log("SCRIPT STILL RUNNING");
-}, 3000);
-
-document.addEventListener("DOMContentLoaded", () => {
     console.log("ARCHON SYSTEM READY");
-});
+
+}
