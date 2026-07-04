@@ -189,10 +189,18 @@ if (menuItems[index] === "MISSION") {
     // MISSION PAGE
     // ======================================
 
-function openMission() {
+async function openMission() {
 
     menu.style.display = "none";
     missionPage.style.display = "block";
+
+    missionTerminal.innerHTML = "";
+
+    const line = document.createElement("p");
+
+    missionTerminal.appendChild(line);
+
+    await terminalType(line, "> INITIALIZING MISSION TERMINAL...");
 
 }
 
