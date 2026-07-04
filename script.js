@@ -110,7 +110,31 @@ async function terminalType(element, text, speed = 40) {
     }
 
 }
-    
+
+    async function terminalPrint(lines) {
+
+    missionTerminal.innerHTML = "";
+
+    for (const text of lines) {
+
+        const line = document.createElement("p");
+
+        missionTerminal.appendChild(line);
+
+        if (text === "") {
+
+            await terminalDelay(300);
+
+            continue;
+
+        }
+
+        await terminalType(line, text);
+
+        await terminalDelay(350);
+
+    }
+
     // ======================================
     // BOOT SEQUENCE
     // ======================================
