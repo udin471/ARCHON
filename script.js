@@ -111,3 +111,11 @@ function bootSequence(){
 // ======================================
 
 bootSequence();
+
+const menuItems = [
+    "MISSION",
+    "PLACE",
+    "DATABASE",
+    "ARCHIVE",
+    "SETTINGS"
+];
