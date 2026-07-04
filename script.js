@@ -107,6 +107,8 @@ function bootSequence(){
 
 bootSequence();
 
+const menu = document.getElementById("menu");
+
 const menuItems = [
     "MISSION",
     "PLACE",
@@ -114,8 +116,6 @@ const menuItems = [
     "ARCHIVE",
     "SETTINGS"
 ];
-
-const menu = document.getElementById("menu");
 
 function showMenu() {
     bootText.style.display = "none";
