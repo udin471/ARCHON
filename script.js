@@ -142,7 +142,12 @@ missionPage.style.display = "none";
 
             item.className = "menu-item";
             item.textContent = menuItems[index];
+if (menuItems[index] === "MISSION") {
 
+    item.addEventListener("click", openMission);
+
+}
+            
             if (menuItems[index] === "MISSION") {
     item.addEventListener("click", openMission);
 }
