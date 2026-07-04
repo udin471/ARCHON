@@ -1,1 +1,34 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
+body{
+    background:#05070d;
+    color:#49d9ff;
+    font-family:Consolas, monospace;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+}
+
+#boot{
+    text-align:center;
+}
+
+#boot h1{
+    font-size:3rem;
+    letter-spacing:8px;
+    text-shadow:0 0 10px #49d9ff,
+                0 0 20px #49d9ff;
+    margin-bottom:20px;
+}
+
+#boot p{
+    font-size:1.1rem;
+    letter-spacing:4px;
+    opacity:.9;
+}
