@@ -217,15 +217,34 @@ async function openMission() {
 
     menu.style.display = "none";
     missionPage.style.display = "block";
-console.log(missionTerminal);
-    
-    missionTerminal.innerHTML = "";
 
-    const line = document.createElement("p");
+    const missionLines = [
 
-    missionTerminal.appendChild(line);
+        "> INITIALIZING MISSION TERMINAL...",
 
-    await terminalType(line, "> INITIALIZING MISSION TERMINAL...");
+        "> ACCESS GRANTED",
+
+        "> N.O.V.A ONLINE",
+
+        "",
+
+        "Commander...",
+
+        "",
+
+        "Scanning mission database...",
+
+        "",
+
+        "No active mission found.",
+
+        "",
+
+        "Awaiting deployment..."
+
+    ];
+
+    await terminalPrint(missionLines);
 
 }
 
