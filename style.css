@@ -14,9 +14,7 @@ body{
     color:#49d9ff;
     font-family:Consolas, monospace;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    display:block;
 
     min-height:100vh;
     overflow:hidden;
