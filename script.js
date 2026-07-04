@@ -61,6 +61,8 @@ function typeWriter(text, callback){
                 bootText.textContent = text + ".".repeat(dots);
 
                 if(dots >= 3){
+    setTimeout(callback, waitAfterMessage + 600);
+                }
 
                     clearInterval(dotAnimation);
 
