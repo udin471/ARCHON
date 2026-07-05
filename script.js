@@ -271,8 +271,8 @@ function closeChapter00() {
 }
 
     // ======================================
-// SYNCHRONIZATION ENGINE
-// ======================================
+    // SYNCHRONIZATION ENGINE
+    // ======================================
 
 function startSynchronization() {
 
