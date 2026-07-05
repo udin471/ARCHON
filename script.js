@@ -403,6 +403,8 @@ if (chapterReturnBtn) {
 
             case 1:
 
+    alert("CASE 1");
+
     startSynchronization();
 
     break;
