@@ -187,7 +187,8 @@ if (!boot || !bootText || !enterBtn || !menu) {
 
     function closeMission() {
 
-    backToMenu();
+    missionPage.style.display = "none";
+    menu.style.display = "flex";
 
     }
 
