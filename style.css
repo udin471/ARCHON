@@ -279,10 +279,15 @@ button:not(.chapter-button):hover {
 
 .chapter-button {
 
+    appearance: none;
+    -webkit-appearance: none;
+
     width: 100%;
 
     background: transparent;
+
     border: none;
+    outline: none;
 
     color: #49d9ff;
 
