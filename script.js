@@ -180,7 +180,8 @@ if (!boot || !bootText || !enterBtn || !menu) {
 
     function openMission() {
 
-    openPage(missionPage);
+    menu.style.display = "none";
+    missionPage.style.display = "block";
 
     }
 
