@@ -58,8 +58,13 @@ body {
     width: 180px;
     margin-bottom: 25px;
 
+    filter:
+        drop-shadow(0 0 8px #49d9ff)
+        drop-shadow(0 0 18px #49d9ff)
+        drop-shadow(0 0 30px rgba(73,217,255,.6));
+
     animation:
-        pulse 2s infinite ease-in-out,
+        pulse 2s ease-in-out infinite,
         archonFlicker 6s infinite;
 }
 
