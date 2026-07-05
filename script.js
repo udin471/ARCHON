@@ -131,12 +131,27 @@ if (!boot || !bootText || !enterBtn || !menu) {
     // ======================================
 
     const menuItems = [
-        "MISSION",
-        "MAIN STORY",
-        "DATABASE",
-        "ARCHIVE",
-        "SETTINGS"
-    ];
+    {
+        title: "MISSION",
+        action: () => openPage(missionPage)
+    },
+    {
+        title: "MAIN STORY",
+        action: () => alert("Coming Soon")
+    },
+    {
+        title: "DATABASE",
+        action: () => alert("Coming Soon")
+    },
+    {
+        title: "ARCHIVE",
+        action: () => alert("Coming Soon")
+    },
+    {
+        title: "SETTINGS",
+        action: () => alert("Coming Soon")
+    }
+];
 
     function showMenu() {
 
