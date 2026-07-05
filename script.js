@@ -212,8 +212,8 @@ function goToMenu(currentPage) {
 
     function closeMission() {
 
-        missionPage.style.display = "none";
-        menu.style.display = "flex";
+    missionPage.style.display = "none";
+    menu.style.display = "flex";
 
     }
 
