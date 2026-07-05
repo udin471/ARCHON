@@ -211,14 +211,18 @@ function hideAllPages() {
 
 }
 
-function openPage(page) {
+function openPage(pageName) {
 
     hideAllPages();
 
     menu.style.display = "none";
 
-    if (page) {
+    const page = pages[pageName];
+
+    if(page){
+
         page.style.display = "flex";
+
     }
 
 }
