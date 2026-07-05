@@ -54,7 +54,8 @@ if (!boot || !bootText || !enterBtn || !menu) {
     menu.style.display = "none";
     missionPage.style.display = "none";
     mainStoryPage.style.display = "none";
-
+    chapterPage.style.display = "none";
+    
     // ======================================
     // TYPEWRITER EFFECT
     // ======================================
