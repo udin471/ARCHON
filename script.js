@@ -227,8 +227,7 @@ function backToMenu() {
 
     function closeMission() {
 
-        missionPage.style.display = "none";
-        menu.style.display = "flex";
+    backToMenu();
 
     }
 
