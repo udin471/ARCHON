@@ -213,10 +213,9 @@ function openMainStory() {
 
 function closeMainStory() {
 
-    console.log("RETURN MAIN STORY");
-
     mainStoryPage.style.display = "none";
-    menu.style.display = "flex";
+
+    showMenu();
 
 }
     
