@@ -169,13 +169,11 @@ if (!boot || !bootText || !enterBtn || !menu) {
             const item = document.createElement("div");
 
             item.className = "menu-item";
-            item.textContent = menuItems[index];
+            const currentItem = menuItems[index];
 
-            if (menuItems[index] === "MISSION") {
+item.textContent = currentItem.title;
 
-                item.addEventListener("click", openMission);
-
-            }
+item.addEventListener("click", currentItem.action);
 
             menu.appendChild(item);
 
