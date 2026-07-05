@@ -21,8 +21,6 @@ const chapterReturnBtn = document.getElementById("chapterReturnBtn");
 const chapter00Btn = document.getElementById("chapter00Btn");
 const chapterNextBtn = document.getElementById("chapterNextBtn");
 const chapterText = document.getElementById("chapterText");
-const syncBar = document.getElementById("syncBar");
-const syncPercent = document.getElementById("syncPercent");
 
 // ======================================
 // HTML VALIDATION
@@ -241,20 +239,6 @@ function closeMainStory() {
 }
 
     // ======================================
-    // CHAPTER 00 STORY
-    // ======================================
-
-const chapter00Story = [
-
-    "SYSTEM BOOTING...",
-
-    "INITIALIZING CORE..."
-
-];
-
-let chapterIndex = 0;
-    
-    // ======================================
     // CHAPTER PAGE
     // ======================================
 
@@ -262,92 +246,12 @@ function openChapter00() {
 
     showPage(chapterPage);
 
-    if (syncBar) {
-        syncBar.style.width = "0%";
-    }
-
-    if (syncPercent) {
-        syncPercent.textContent = "0%";
-    }
-
-    chapterIndex = 0;
-
-chapterText.innerHTML = `
-    <p>${chapter00Story[chapterIndex]}</p>
-`;
-
-    chapterNextBtn.style.display = "inline-block";
-    chapterNextBtn.disabled = false;
-
-    chapterReturnBtn.style.display = "none";
-
 }
 
 function closeChapter00() {
 
     chapterPage.style.display = "none";
     showPage(mainStoryPage);
-
-}
-
-    // ======================================
-    // SYNCHRONIZATION ENGINE
-    // ======================================
-
-function startSynchronization() {
-
-    chapterNextBtn.style.display = "none";
-
-    const syncSteps = [
-
-        "SYNCHRONIZATION 0%",
-
-        "SYNCHRONIZATION 20%",
-
-        "SYNCHRONIZATION 45%",
-
-        "SYNCHRONIZATION 67%",
-
-        "SYNCHRONIZATION 89%",
-
-        "SYNCHRONIZATION 100%",
-
-        "SYNCHRONIZATION SUCCESSFUL",
-
-        "SYSTEM READY",
-
-        "WELCOME ARCHON"
-
-    ];
-
-    let index = 0;
-
-    function nextStep() {
-
-        const progress = [0, 20, 45, 67, 89, 100];
-
-if (index <= 5) {
-
-    syncBar.style.width = progress[index] + "%";
-    syncPercent.textContent = progress[index] + "%";
-
-}
-
-        index++;
-
-        if (index < syncSteps.length) {
-
-            setTimeout(nextStep, 900);
-
-        } else {
-
-            chapterReturnBtn.style.display = "inline-block";
-
-        }
-
-    }
-
-    nextStep();
 
 }
     
@@ -395,7 +299,14 @@ if (chapterReturnBtn) {
 
     if (chapterNextBtn) {
 
-    chapterNextBtn.addEventListener("click", startSynchronization);
+    chapterNextBtn.addEventListener("click", () => {
+
+        chapterText.innerHTML = `
+            <p>CHAPTER SYSTEM ACTIVE...</p>
+            <p>NO DATA AVAILABLE YET.</p>
+        `;
+
+    });
 
     }
     
@@ -407,4 +318,4 @@ if (chapterReturnBtn) {
 
     console.log("ARCHON SYSTEM READY");
 
-}      
+}
