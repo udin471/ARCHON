@@ -239,6 +239,20 @@ function closeMainStory() {
 }
 
     // ======================================
+    // CHAPTER 00 STORY
+    // ======================================
+
+const chapter00Story = [
+
+    "SYSTEM BOOTING...",
+
+    "INITIALIZING CORE..."
+
+];
+
+let chapterIndex = 0;
+    
+    // ======================================
     // CHAPTER PAGE
     // ======================================
 
