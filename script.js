@@ -277,9 +277,17 @@ function closeChapter00() {
 
     if (chapter00Btn) {
 
-    chapter00Btn.addEventListener("click", openChapter00);
+    console.log("CHAPTER BUTTON FOUND");
 
-}
+    chapter00Btn.addEventListener("click", () => {
+
+        console.log("CHAPTER CLICKED");
+
+        openChapter00();
+
+    });
+
+    }
 
 if (chapterReturnBtn) {
 
