@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>A.R.C.H.O.N.</title>
 
     <link rel="stylesheet" href="style.css">
@@ -10,84 +12,104 @@
 
 <body>
 
-<div id="boot">
-    <img src="assets/logo.png" alt="ARCHON Logo" class="logo">
+    <!-- ======================================
+         BOOT SCREEN
+    ======================================= -->
 
-    <h1>A.R.C.H.O.N.</h1>
+    <div id="boot">
 
-    <p class="tagline">ONE MIND<br>TWO EXISTENCES</p>
+        <img src="assets/logo.png" alt="ARCHON Logo" class="logo">
 
-    <p id="bootText" class="status">INITIALIZING...</p>
+        <h1>A.R.C.H.O.N.</h1>
 
-    <button id="enterBtn">ENTER DATABASE</button>
-</div>
+        <p class="tagline">
+            ONE MIND<br>
+            TWO EXISTENCES
+        </p>
 
-<div id="menu"></div>
-<!-- ========================= -->
-<!-- MISSION PAGE -->
-<!-- ========================= -->
+        <p id="bootText" class="status">
+            INITIALIZING...
+        </p>
 
-<div id="missionPage" class="page">
-
-    <div class="page-header">
-        <h2>MISSION</h2>
-    </div>
-
-    <div class="mission-content">
-
-        <h3>CURRENT OBJECTIVE</h3>
-        <p>Survive.</p>
-
-        <br>
-
-        <h3>STATUS</h3>
-        <p>ACTIVE</p>
-
-        <br>
-
-        <h3>LOCATION</h3>
-        <p>UNKNOWN CITY</p>
-
-        <br>
-
-        <h3>OPERATOR</h3>
-        <p>A.R.C.H.O.N</p>
-
-        <br>
-
-        <h3>SUPPORT AI</h3>
-        <p>N.O.V.A</p>
-
-        <br><br>
-
-        <div class="nova-message">
-
-            <h3>N.O.V.A</h3>
-
-            <p>
-                Operator...
-                <br><br>
-
-                Communication with BlackOps Headquarters has been lost.
-                <br><br>
-
-                Current location cannot be identified.
-                <br><br>
-
-                Proceed with extreme caution.
-            </p>
-
-        </div>
-
-        <button id="returnBtn">
-            RETURN
+        <button id="enterBtn">
+            ENTER DATABASE
         </button>
 
     </div>
 
-</div>
-    
-<script src="script.js"></script>
+    <!-- ======================================
+         MAIN MENU
+    ======================================= -->
+
+    <div id="menu"></div>
+
+    <!-- ======================================
+         MISSION PAGE
+    ======================================= -->
+
+    <div id="missionPage" class="page">
+
+        <div class="page-header">
+            <h2>MISSION</h2>
+        </div>
+
+        <div class="mission-content">
+
+            <h3>CURRENT OBJECTIVE</h3>
+            <p>Survive.</p>
+
+            <br>
+
+            <h3>STATUS</h3>
+            <p>ACTIVE</p>
+
+            <br>
+
+            <h3>LOCATION</h3>
+            <p>UNKNOWN CITY</p>
+
+            <br>
+
+            <h3>OPERATOR</h3>
+            <p>A.R.C.H.O.N</p>
+
+            <br>
+
+            <h3>SUPPORT AI</h3>
+            <p>N.O.V.A</p>
+
+            <br>
+            <br>
+
+            <div class="nova-message">
+
+                <h3>N.O.V.A</h3>
+
+                <p>
+                    Operator...
+                    <br><br>
+
+                    Communication with BlackOps Headquarters has been lost.
+                    <br><br>
+
+                    Current location cannot be identified.
+                    <br><br>
+
+                    Proceed with extreme caution.
+                </p>
+
+            </div>
+
+            <button id="returnBtn">
+                RETURN
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
