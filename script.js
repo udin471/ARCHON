@@ -209,13 +209,11 @@ function hideAllPages() {
 
 }
 
-function openPage(pageName) {
+function openPage(page) {
 
     hideAllPages();
 
     menu.style.display = "none";
-
-    const page = pages[pageName];
 
     if(page){
 
@@ -224,7 +222,7 @@ function openPage(pageName) {
     }
 
 }
-
+    
 function backToMenu() {
 
     hideAllPages();
