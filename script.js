@@ -222,8 +222,7 @@ function goToMenu(currentPage) {
 
 function openMainStory() {
 
-    menu.style.display = "none";
-    mainStoryPage.style.display = "block";
+    showPage(mainStoryPage);
 
 }
 
