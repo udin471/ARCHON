@@ -131,13 +131,13 @@ if (!boot || !bootText || !enterBtn || !menu) {
     // ======================================
 
     const menuItems = [
-    "MISSION",
-    "MAIN STORY",
-    "DATABASE",
-    "ARCHIVE",
-    "SETTINGS"
-];
-    
+        "MISSION",
+        "MAIN STORY",
+        "DATABASE",
+        "ARCHIVE",
+        "SETTINGS"
+    ];
+
     function showMenu() {
 
         boot.style.display = "none";
@@ -154,29 +154,45 @@ if (!boot || !bootText || !enterBtn || !menu) {
             const item = document.createElement("div");
 
             item.className = "menu-item";
-item.textContent = menuItems[index];
+            item.textContent = menuItems[index];
 
-if (menuItems[index] === "MISSION") {
-    item.addEventListener("click", openMission);
-}
-            
+            if (menuItems[index] === "MISSION") {
+
+                item.addEventListener("click", openMission);
+
+            }
+
+            menu.appendChild(item);
+
+            index++;
+
+            setTimeout(showNext, 400);
+
+        }
+
+        showNext();
+
+    }
+
+
     // ======================================
     // MISSION PAGE
     // ======================================
 
     function openMission() {
 
-    menu.style.display = "none";
-    missionPage.style.display = "block";
+        menu.style.display = "none";
+        missionPage.style.display = "block";
 
-}
+    }
 
-function closeMission() {
+    function closeMission() {
 
-    missionPage.style.display = "none";
-    menu.style.display = "flex";
+        missionPage.style.display = "none";
+        menu.style.display = "flex";
 
-}
+    }
+
 
     // ======================================
     // BUTTON EVENTS
@@ -203,4 +219,4 @@ function closeMission() {
 
     console.log("ARCHON SYSTEM READY");
 
-}
+}                 
