@@ -234,6 +234,23 @@ function closeMainStory() {
     goToMenu(mainStoryPage);
 
 }
+
+    // ======================================
+    // CHAPTER PAGE
+    // ======================================
+
+function openChapter00() {
+
+    showPage(chapterPage);
+
+}
+
+function closeChapter00() {
+
+    mainStoryPage.style.display = "flex";
+    chapterPage.style.display = "none";
+
+}
     
     // ======================================
     // BUTTON EVENTS
