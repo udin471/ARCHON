@@ -250,8 +250,8 @@ function openChapter00() {
 
 function closeChapter00() {
 
-    mainStoryPage.style.display = "flex";
     chapterPage.style.display = "none";
+    showPage(mainStoryPage);
 
 }
     
