@@ -234,7 +234,12 @@ function closeMainStory() {
 
     }
 
+    if (mainStoryReturnBtn) {
 
+    mainStoryReturnBtn.addEventListener("click", closeMainStory);
+
+    }
+    
     // ======================================
     // START SYSTEM
     // ======================================
