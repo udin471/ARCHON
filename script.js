@@ -23,6 +23,12 @@ const chapterNextBtn = document.getElementById("chapterNextBtn");
 const chapterText = document.getElementById("chapterText");
 
 // ======================================
+// CHAPTER STATE
+// ======================================
+
+let chapterState = 0;
+
+// ======================================
 // HTML VALIDATION
 // ======================================
 
