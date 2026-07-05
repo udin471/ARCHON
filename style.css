@@ -315,3 +315,49 @@ button:not(.chapter-button):hover {
     transform: translateX(8px);
 
 }
+
+/* ======================================
+   SYNCHRONIZATION BAR
+====================================== */
+
+.progress-bar {
+
+    width: 100%;
+    height: 16px;
+
+    margin: 25px 0;
+
+    border: 2px solid #49d9ff;
+
+    overflow: hidden;
+
+}
+
+#syncBar {
+
+    width: 0%;
+
+    height: 100%;
+
+    background: #49d9ff;
+
+    box-shadow:
+        0 0 10px #49d9ff,
+        0 0 20px #49d9ff,
+        0 0 35px #49d9ff;
+
+    transition: width .8s ease;
+
+}
+
+#syncPercent {
+
+    text-align: center;
+
+    letter-spacing: 4px;
+
+    margin-top: 10px;
+
+    color: #49d9ff;
+
+}
