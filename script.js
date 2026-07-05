@@ -320,16 +320,56 @@ function startSynchronization() {
 
             setTimeout(() => {
 
+    chapterText.innerHTML += `
+        <br>
+        <p>> Verifying Memory...</p>
+    `;
+
+    setTimeout(() => {
+
+        chapterText.innerHTML += `
+            <p>> Memory Integrity : OK</p>
+        `;
+
+        setTimeout(() => {
+
+            chapterText.innerHTML += `
+                <p>> Loading Neural Core...</p>
+            `;
+
+            setTimeout(() => {
+
                 chapterText.innerHTML += `
-                    <br>
-                    <p>Synchronization Success</p>
+                    <p>> N.O.V.A Interface Online</p>
                 `;
 
-                chapterNextBtn.style.display = "inline-block";
+                setTimeout(() => {
 
-                chapterState = 3;
+                    chapterText.innerHTML += `
+                        <p>> Restoring Tactical Database...</p>
+                    `;
 
-            }, 900);
+                    setTimeout(() => {
+
+                        chapterText.innerHTML += `
+                            <p>> Synchronization Success</p>
+                        `;
+
+                        chapterNextBtn.style.display = "inline-block";
+
+                        chapterState = 3;
+
+                    }, 1000);
+
+                }, 1000);
+
+            }, 1000);
+
+        }, 1000);
+
+    }, 1000);
+
+}, 900);
 
         }
 
