@@ -3,6 +3,7 @@
 // Version 2.1
 // ======================================
 
+
 // ======================================
 // ELEMENTS
 // ======================================
@@ -13,9 +14,16 @@ const enterBtn = document.getElementById("enterBtn");
 const menu = document.getElementById("menu");
 const missionPage = document.getElementById("missionPage");
 const returnBtn = document.getElementById("returnBtn");
-// Pastikan semua elemen ditemukan
+
+
+// ======================================
+// HTML VALIDATION
+// ======================================
+
 if (!boot || !bootText || !enterBtn || !menu) {
+
     console.error("ARCHON ERROR: Ada elemen HTML yang tidak ditemukan.");
+
 } else {
 
     // ======================================
@@ -34,14 +42,16 @@ if (!boot || !bootText || !enterBtn || !menu) {
     const typingSpeed = 160;
     const waitAfterMessage = 1200;
 
+
     // ======================================
     // INITIAL STATE
     // ======================================
 
     enterBtn.style.display = "none";
     menu.style.display = "none";
-missionPage.style.display = "none";
-    
+    missionPage.style.display = "none";
+
+
     // ======================================
     // TYPEWRITER EFFECT
     // ======================================
@@ -86,6 +96,7 @@ missionPage.style.display = "none";
 
     }
 
+
     // ======================================
     // BOOT SEQUENCE
     // ======================================
@@ -113,6 +124,7 @@ missionPage.style.display = "none";
         });
 
     }
+
 
     // ======================================
     // MENU
@@ -143,12 +155,13 @@ missionPage.style.display = "none";
 
             item.className = "menu-item";
             item.textContent = menuItems[index];
-if (menuItems[index] === "MISSION") {
 
-    item.addEventListener("click", openMission);
+            if (menuItems[index] === "MISSION") {
 
-}
-            
+                item.addEventListener("click", openMission);
+
+            }
+
             menu.appendChild(item);
 
             index++;
@@ -160,26 +173,29 @@ if (menuItems[index] === "MISSION") {
         showNext();
 
     }
+
+
     // ======================================
     // MISSION PAGE
     // ======================================
 
-function openMission() {
+    function openMission() {
 
-    menu.style.display = "none";
-    missionPage.style.display = "block";
+        menu.style.display = "none";
+        missionPage.style.display = "block";
 
-}
+    }
 
-function closeMission() {
+    function closeMission() {
 
-    missionPage.style.display = "none";
-    menu.style.display = "flex";
+        missionPage.style.display = "none";
+        menu.style.display = "flex";
 
-}
+    }
+
 
     // ======================================
-    // BUTTON
+    // BUTTON EVENTS
     // ======================================
 
     enterBtn.addEventListener("click", () => {
@@ -188,16 +204,19 @@ function closeMission() {
 
     });
 
+    if (returnBtn) {
+
+        returnBtn.addEventListener("click", closeMission);
+
+    }
+
+
     // ======================================
     // START SYSTEM
     // ======================================
-if (returnBtn) {
 
-    returnBtn.addEventListener("click", closeMission);
-
-}
     bootSequence();
 
     console.log("ARCHON SYSTEM READY");
 
-              }
+}
