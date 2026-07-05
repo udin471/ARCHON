@@ -262,6 +262,14 @@ function openChapter00() {
 
     showPage(chapterPage);
 
+    if (syncBar) {
+        syncBar.style.width = "0%";
+    }
+
+    if (syncPercent) {
+        syncPercent.textContent = "0%";
+    }
+
     chapterText.innerHTML = `
         <p>System Booting...</p>
     `;
