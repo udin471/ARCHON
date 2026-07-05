@@ -358,6 +358,8 @@ if (chapterReturnBtn) {
     // START SYSTEM
     // ======================================
 
+    alert("SCRIPT VERSION 2.1 TEST");
+    
     bootSequence();
 
     console.log("ARCHON SYSTEM READY");
