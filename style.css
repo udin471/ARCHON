@@ -179,6 +179,26 @@ button:not(.chapter-button):hover {
     max-width: 700px;
 }
 
+/* ======================================
+   SYNCHRONIZATION CONTAINER
+====================================== */
+
+#syncContainer {
+
+    margin-top: 25px;
+
+}
+
+#syncTitle {
+
+    margin-bottom: 12px;
+
+    letter-spacing: 3px;
+
+    color: #49d9ff;
+
+}
+
 #missionTerminal {
     margin-bottom: 30px;
 
