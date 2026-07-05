@@ -276,6 +276,8 @@ function closeChapter00() {
 
 function startSynchronization() {
 
+    alert("Synchronization Engine Started");
+    
     chapterText.innerHTML = `
         <p>Synchronizing...</p>
 
