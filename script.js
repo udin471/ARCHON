@@ -396,12 +396,9 @@ if (chapterReturnBtn) {
 
             case 1:
 
-                chapterText.innerHTML = `
-                    <p>Synchronizing...</p>
-                `;
+    startSynchronization();
 
-                chapterState++;
-                break;
+    break;
 
             case 2:
 
