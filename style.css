@@ -315,3 +315,54 @@ button:not(.chapter-button):hover {
     transform: translateX(8px);
 
 }
+
+/* ======================================
+   PROGRESS BAR
+====================================== */
+
+.progress-container {
+
+    width: 100%;
+    margin-top: 25px;
+
+}
+
+.progress-bar {
+
+    width: 100%;
+    height: 22px;
+
+    border: 2px solid #49d9ff;
+    border-radius: 8px;
+
+    overflow: hidden;
+
+}
+
+.progress-fill {
+
+    width: 0%;
+
+    height: 100%;
+
+    background: #49d9ff;
+
+    transition: width .8s ease;
+
+    box-shadow:
+        0 0 10px #49d9ff,
+        0 0 20px #49d9ff;
+
+}
+
+.progress-text {
+
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 18px;
+
+    letter-spacing: 3px;
+
+}
