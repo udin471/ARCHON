@@ -378,23 +378,7 @@ if (chapterReturnBtn) {
 
     if (chapterNextBtn) {
 
-    chapterNextBtn.addEventListener("click", () => {
-
-        if (chapterIndex < chapter00Story.length - 1) {
-
-            chapterIndex++;
-
-            chapterText.innerHTML = `
-                <p>${chapter00Story[chapterIndex]}</p>
-            `;
-
-        } else {
-
-            startSynchronization();
-
-        }
-
-    });
+    chapterNextBtn.addEventListener("click", startSynchronization);
 
     }
     
