@@ -133,7 +133,7 @@ if (!boot || !bootText || !enterBtn || !menu) {
     const menuItems = [
     {
         title: "MISSION",
-        action: () => openPage(missionPage)
+        action: () => openPage("mission")
     },
     {
         title: "MAIN STORY",
