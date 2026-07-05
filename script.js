@@ -322,9 +322,14 @@ function startSynchronization() {
 
     function nextStep() {
 
-        chapterText.innerHTML = `
-            <p>${syncSteps[index]}</p>
-        `;
+        const progress = [0, 20, 45, 67, 89, 100];
+
+if (index <= 5) {
+
+    syncBar.style.width = progress[index] + "%";
+    syncPercent.textContent = progress[index] + "%";
+
+}
 
         index++;
 
