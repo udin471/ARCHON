@@ -296,6 +296,19 @@ if (chapterReturnBtn) {
     chapterReturnBtn.addEventListener("click", closeChapter00);
 
 }
+
+    if (chapterNextBtn) {
+
+    chapterNextBtn.addEventListener("click", () => {
+
+        chapterText.innerHTML = `
+            <p>CHAPTER SYSTEM ACTIVE...</p>
+            <p>NO DATA AVAILABLE YET.</p>
+        `;
+
+    });
+
+    }
     
     // ======================================
     // START SYSTEM
