@@ -120,7 +120,7 @@ missionPage.style.display = "none";
 
     const menuItems = [
         "MISSION",
-        "PLACE",
+        "MAIN STORY",
         "DATABASE",
         "ARCHIVE",
         "SETTINGS"
