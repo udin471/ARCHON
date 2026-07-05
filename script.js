@@ -389,21 +389,15 @@ if (chapterReturnBtn) {
 
             case 0:
 
-    alert("CASE 0");
-
     chapterText.innerHTML = `
         <p>Initializing core...</p>
     `;
 
     chapterState++;
 
-    alert("chapterState = " + chapterState);
-
     break;
 
             case 1:
-
-    alert("CASE 1");
 
     startSynchronization();
 
