@@ -163,6 +163,12 @@ if (!boot || !bootText || !enterBtn || !menu) {
 
             }
 
+            if (menuItems[index] === "MAIN STORY") {
+
+    item.addEventListener("click", openMainStory);
+
+            }
+            
             menu.appendChild(item);
 
             index++;
