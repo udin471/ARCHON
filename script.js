@@ -228,9 +228,7 @@ function openMainStory() {
 
 function closeMainStory() {
 
-    mainStoryPage.style.display = "none";
-
-    showMenu();
+    goToMenu(mainStoryPage);
 
 }
     
