@@ -274,6 +274,18 @@ function closeChapter00() {
     mainStoryReturnBtn.addEventListener("click", closeMainStory);
 
     }
+
+    if (chapter00Btn) {
+
+    chapter00Btn.addEventListener("click", openChapter00);
+
+}
+
+if (chapterReturnBtn) {
+
+    chapterReturnBtn.addEventListener("click", closeChapter00);
+
+}
     
     // ======================================
     // START SYSTEM
