@@ -102,11 +102,13 @@ button:not(.chapter-button) {
 
 }
 
-button:hover {
+button:not(.chapter-button):hover {
+
     background: #49d9ff;
     color: #05070d;
 
     box-shadow: 0 0 20px #49d9ff;
+
 }
 
 
