@@ -221,8 +221,7 @@ function backToMenu() {
 
     function openMission() {
 
-        menu.style.display = "none";
-        missionPage.style.display = "block";
+    openPage(missionPage);
 
     }
 
