@@ -166,15 +166,17 @@ if (menuItems[index] === "MISSION") {
 
     function openMission() {
 
-    openPage(missionPage);
+    menu.style.display = "none";
+    missionPage.style.display = "block";
 
-    }
+}
 
-    function closeMission() {
+function closeMission() {
 
-    backToMenu();
+    missionPage.style.display = "none";
+    menu.style.display = "flex";
 
-    }
+}
 
     // ======================================
     // BUTTON EVENTS
