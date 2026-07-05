@@ -316,10 +316,39 @@ if (chapterReturnBtn) {
 
     chapterNextBtn.addEventListener("click", () => {
 
-        chapterText.innerHTML = `
-            <p>CHAPTER SYSTEM ACTIVE...</p>
-            <p>NO DATA AVAILABLE YET.</p>
-        `;
+        switch (chapterState) {
+
+            case 0:
+
+                chapterText.innerHTML = `
+                    <p>Initializing core...</p>
+                `;
+
+                chapterState++;
+                break;
+
+            case 1:
+
+                chapterText.innerHTML = `
+                    <p>Synchronizing...</p>
+                `;
+
+                chapterState++;
+                break;
+
+            case 2:
+
+                chapterText.innerHTML = `
+                    <p>Welcome ARCHON</p>
+                `;
+
+                chapterNextBtn.style.display = "none";
+                chapterReturnBtn.style.display = "inline-block";
+
+                chapterState++;
+                break;
+
+        }
 
     });
 
