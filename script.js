@@ -389,12 +389,17 @@ if (chapterReturnBtn) {
 
             case 0:
 
-                chapterText.innerHTML = `
-                    <p>Initializing core...</p>
-                `;
+    alert("CASE 0");
 
-                chapterState++;
-                break;
+    chapterText.innerHTML = `
+        <p>Initializing core...</p>
+    `;
+
+    chapterState++;
+
+    alert("chapterState = " + chapterState);
+
+    break;
 
             case 1:
 
