@@ -271,59 +271,28 @@ function closeChapter00() {
 }
 
     // ======================================
-    // PROGRESS ENGINE
-    // ======================================
+// SYNCHRONIZATION ENGINE
+// ======================================
 
 function startSynchronization() {
-    
-    chapterText.innerHTML += `
-    <br>
-    <p>> Verifying Memory...</p>
-`;
 
-setTimeout(() => {
+    chapterText.innerHTML = `
+        <p>Synchronizing...</p>
 
-    chapterText.innerHTML += `
-        <p>> Memory Integrity : OK</p>
+        <div class="progress-container">
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <div class="progress-text" id="progressText">
+                0%
+            </div>
+
+        </div>
     `;
 
-    setTimeout(() => {
-
-        chapterText.innerHTML += `
-            <p>> Loading Neural Core...</p>
-        `;
-
-        setTimeout(() => {
-
-            chapterText.innerHTML += `
-                <p>> N.O.V.A Interface Online</p>
-            `;
-
-            setTimeout(() => {
-
-                chapterText.innerHTML += `
-                    <p>> Restoring Tactical Database...</p>
-                `;
-
-                setTimeout(() => {
-
-                    chapterText.innerHTML += `
-                        <p>> Synchronization Success</p>
-                    `;
-
-                    chapterNextBtn.style.display = "inline-block";
-
-                    chapterState = 3;
-
-                }, 1000);
-
-            }, 1000);
-
-        }, 1000);
-
-    }, 1000);
-
-}, 1000);
+    chapterNextBtn.style.display = "none";
 
     const progressFill = document.getElementById("progressFill");
     const progressText = document.getElementById("progressText");
@@ -347,60 +316,47 @@ setTimeout(() => {
 
         } else {
 
-            setTimeout(() => {
-
-    chapterText.innerHTML += `
-        <br>
-        <p>> Verifying Memory...</p>
-    `;
-
-    setTimeout(() => {
-
-        chapterText.innerHTML += `
-            <p>> Memory Integrity : OK</p>
-        `;
-
-        setTimeout(() => {
-
-            chapterText.innerHTML += `
-                <p>> Loading Neural Core...</p>
-            `;
-
-            setTimeout(() => {
-
-                chapterText.innerHTML += `
-                    <p>> N.O.V.A Interface Online</p>
-                `;
-
-                setTimeout(() => {
-
-                    chapterText.innerHTML += `
-                        <p>> Restoring Tactical Database...</p>
-                    `;
-
-                    setTimeout(() => {
-
-                        chapterText.innerHTML += `
-                            <p>> Synchronization Success</p>
-                        `;
-
-                        chapterNextBtn.style.display = "inline-block";
-
-                        chapterState = 3;
-
-                    }, 1000);
-
-                }, 1000);
-
-            }, 1000);
-
-        }, 1000);
-
-    }, 1000);
-
-}, 900);
+            setTimeout(showBootMessages, 900);
 
         }
+
+    }
+
+    function showBootMessages() {
+
+        const messages = [
+            "Verifying Memory...",
+            "Memory Integrity : OK",
+            "Loading Neural Core...",
+            "N.O.V.A Interface Online",
+            "Restoring Tactical Database...",
+            "Synchronization Success"
+        ];
+
+        let i = 0;
+
+        function nextMessage() {
+
+            if (i >= messages.length) {
+
+                chapterNextBtn.style.display = "inline-block";
+                chapterState = 3;
+
+                return;
+
+            }
+
+            chapterText.innerHTML += `
+                <p>> ${messages[i]}</p>
+            `;
+
+            i++;
+
+            setTimeout(nextMessage, 1000);
+
+        }
+
+        nextMessage();
 
     }
 
