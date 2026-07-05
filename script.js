@@ -199,10 +199,12 @@ const pages = {
 
 function hideAllPages() {
 
-    pages.forEach(page => {
+    Object.values(pages).forEach(page => {
 
         if (page) {
+
             page.style.display = "none";
+
         }
 
     });
