@@ -400,7 +400,7 @@ if (chapterReturnBtn) {
 
     break;
 
-            case 2:
+            case 3:
 
                 chapterText.innerHTML = `
                     <p>Welcome ARCHON</p>
