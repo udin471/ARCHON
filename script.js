@@ -19,6 +19,8 @@ const mainStoryReturnBtn = document.getElementById("mainStoryReturnBtn");
 const chapterPage = document.getElementById("chapterPage");
 const chapterReturnBtn = document.getElementById("chapterReturnBtn");
 const chapter00Btn = document.getElementById("chapter00Btn");
+const chapterNextBtn = document.getElementById("chapterNextBtn");
+const chapterText = document.getElementById("chapterText");
 
 // ======================================
 // HTML VALIDATION
