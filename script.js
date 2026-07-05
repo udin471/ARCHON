@@ -197,7 +197,7 @@ const pages = [
 
 function hideAllPages() {
 
-    Object.values(pages).forEach(page => {
+    pages.forEach(page => {
 
         if (page) {
 
