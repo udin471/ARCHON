@@ -188,50 +188,6 @@ item.addEventListener("click", currentItem.action);
     }
 
     // ======================================
-// NAVIGATION ENGINE
-// ======================================
-
-const pages = [
-    missionPage
-];
-
-function hideAllPages() {
-
-    pages.forEach(page => {
-
-        if (page) {
-
-            page.style.display = "none";
-
-        }
-
-    });
-
-}
-
-function openPage(page) {
-
-    hideAllPages();
-
-    menu.style.display = "none";
-
-    if(page){
-
-        page.style.display = "flex";
-
-    }
-
-}
-    
-function backToMenu() {
-
-    hideAllPages();
-
-    menu.style.display = "flex";
-
-}
-    
-    // ======================================
     // MISSION PAGE
     // ======================================
 
