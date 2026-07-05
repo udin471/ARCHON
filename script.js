@@ -28,7 +28,7 @@ if (!boot || !bootText || !enterBtn || !menu) {
         "MEMORY CORRUPTED",
         "CONNECTING TO N.O.V.A",
         "LINK ESTABLISHED",
-        "WELCOME ARCHON"
+        "WELCOME NPC5643627"
     ];
 
     const typingSpeed = 160;
