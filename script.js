@@ -254,6 +254,62 @@ function closeChapter00() {
     showPage(mainStoryPage);
 
 }
+
+    // ======================================
+    // SYNCHRONIZATION ENGINE
+    // ======================================
+
+function startSynchronization() {
+
+    chapterNextBtn.style.display = "none";
+
+    const syncSteps = [
+
+        "SYNCHRONIZATION 0%",
+
+        "SYNCHRONIZATION 20%",
+
+        "SYNCHRONIZATION 45%",
+
+        "SYNCHRONIZATION 67%",
+
+        "SYNCHRONIZATION 89%",
+
+        "SYNCHRONIZATION 100%",
+
+        "SYNCHRONIZATION SUCCESSFUL",
+
+        "SYSTEM READY",
+
+        "WELCOME ARCHON"
+
+    ];
+
+    let index = 0;
+
+    function nextStep() {
+
+        chapterText.innerHTML = `
+            <p>${syncSteps[index]}</p>
+        `;
+
+        index++;
+
+        if (index < syncSteps.length) {
+
+            setTimeout(nextStep, 900);
+
+        } else {
+
+            chapterReturnBtn.style.display = "inline-block";
+
+        }
+
+    }
+
+    nextStep();
+
+}
     
     // ======================================
     // BUTTON EVENTS
