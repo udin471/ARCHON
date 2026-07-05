@@ -181,7 +181,25 @@ if (!boot || !bootText || !enterBtn || !menu) {
 
     }
 
+   // ======================================
+   // NAVIGATION SYSTEM
+   // ======================================
 
+function showPage(page) {
+
+    menu.style.display = "none";
+    page.style.display = "flex";
+
+}
+
+function goToMenu(currentPage) {
+
+    currentPage.style.display = "none";
+
+    showMenu();
+
+}
+    
     // ======================================
     // MISSION PAGE
     // ======================================
