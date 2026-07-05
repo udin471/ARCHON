@@ -250,7 +250,16 @@ function closeMainStory() {
 
 function openChapter00() {
 
+    chapterState = 0;
+
     showPage(chapterPage);
+
+    chapterText.innerHTML = `
+        <p>Rebooting system...</p>
+    `;
+
+    chapterNextBtn.style.display = "inline-block";
+    chapterReturnBtn.style.display = "none";
 
 }
 
