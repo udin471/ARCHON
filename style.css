@@ -87,7 +87,8 @@ body {
    BUTTON
 ====================================== */
 
-button {
+button:not(.chapter-button) {
+
     background: transparent;
     color: #49d9ff;
 
@@ -98,6 +99,7 @@ button {
 
     cursor: pointer;
     transition: 0.3s;
+
 }
 
 button:hover {
