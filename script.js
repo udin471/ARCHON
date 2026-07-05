@@ -258,6 +258,15 @@ let chapterIndex = 0;
 
 function openChapter00() {
 
+    chapterIndex = 0;
+
+    chapterText.innerHTML = `
+        <p>${chapter00Story[0]}</p>
+    `;
+
+    chapterNextBtn.style.display = "inline-block";
+    chapterReturnBtn.style.display = "none";
+
     showPage(chapterPage);
 
 }
