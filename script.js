@@ -191,11 +191,9 @@ item.addEventListener("click", currentItem.action);
 // NAVIGATION ENGINE
 // ======================================
 
-const pages = {
-
-    mission: missionPage
-
-};
+const pages = [
+    missionPage
+];
 
 function hideAllPages() {
 
