@@ -380,10 +380,19 @@ if (chapterReturnBtn) {
 
     chapterNextBtn.addEventListener("click", () => {
 
-        chapterText.innerHTML = `
-            <p>CHAPTER SYSTEM ACTIVE...</p>
-            <p>NO DATA AVAILABLE YET.</p>
-        `;
+        if (chapterIndex < chapter00Story.length - 1) {
+
+            chapterIndex++;
+
+            chapterText.innerHTML = `
+                <p>${chapter00Story[chapterIndex]}</p>
+            `;
+
+        } else {
+
+            startSynchronization();
+
+        }
 
     });
 
