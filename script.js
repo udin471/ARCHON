@@ -258,16 +258,16 @@ let chapterIndex = 0;
 
 function openChapter00() {
 
-    chapterIndex = 0;
+    showPage(chapterPage);
 
     chapterText.innerHTML = `
-        <p>${chapter00Story[0]}</p>
+        <p>System Booting...</p>
     `;
 
     chapterNextBtn.style.display = "inline-block";
-    chapterReturnBtn.style.display = "none";
+    chapterNextBtn.disabled = false;
 
-    showPage(chapterPage);
+    chapterReturnBtn.style.display = "none";
 
 }
 
