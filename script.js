@@ -460,6 +460,28 @@ if (chapterReturnBtn) {
     });
 
     }
+
+    // ======================================
+    // TERMINAL OUTPUT
+    // ======================================
+
+function terminalLine(text, delay) {
+
+    return new Promise(resolve => {
+
+        setTimeout(() => {
+
+            chapterText.innerHTML += `
+                <p>> ${text}</p>
+            `;
+
+            resolve();
+
+        }, delay);
+
+    });
+
+}
     
     // ======================================
     // START SYSTEM
