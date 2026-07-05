@@ -269,6 +269,73 @@ function closeChapter00() {
     showPage(mainStoryPage);
 
 }
+
+    // ======================================
+    // PROGRESS ENGINE
+    // ======================================
+
+function startSynchronization() {
+
+    chapterText.innerHTML = `
+        <p>Synchronizing...</p>
+
+        <div class="progress-container">
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <div class="progress-text" id="progressText">
+                0%
+            </div>
+
+        </div>
+    `;
+
+    chapterNextBtn.style.display = "none";
+
+    const progressFill = document.getElementById("progressFill");
+    const progressText = document.getElementById("progressText");
+
+    const progressSteps = [0, 20, 45, 67, 89, 100];
+
+    let index = 0;
+
+    function updateProgress() {
+
+        const value = progressSteps[index];
+
+        progressFill.style.width = value + "%";
+        progressText.textContent = value + "%";
+
+        index++;
+
+        if (index < progressSteps.length) {
+
+            setTimeout(updateProgress, 900);
+
+        } else {
+
+            setTimeout(() => {
+
+                chapterText.innerHTML += `
+                    <br>
+                    <p>Synchronization Success</p>
+                `;
+
+                chapterNextBtn.style.display = "inline-block";
+
+                chapterState = 3;
+
+            }, 900);
+
+        }
+
+    }
+
+    updateProgress();
+
+}
     
     // ======================================
     // BUTTON EVENTS
