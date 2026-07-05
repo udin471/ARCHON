@@ -275,26 +275,55 @@ function closeChapter00() {
     // ======================================
 
 function startSynchronization() {
-
-    alert("Synchronization Engine Started");
     
-    chapterText.innerHTML = `
-        <p>Synchronizing...</p>
+    chapterText.innerHTML += `
+    <br>
+    <p>> Verifying Memory...</p>
+`;
 
-        <div class="progress-container">
+setTimeout(() => {
 
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressFill"></div>
-            </div>
-
-            <div class="progress-text" id="progressText">
-                0%
-            </div>
-
-        </div>
+    chapterText.innerHTML += `
+        <p>> Memory Integrity : OK</p>
     `;
 
-    chapterNextBtn.style.display = "none";
+    setTimeout(() => {
+
+        chapterText.innerHTML += `
+            <p>> Loading Neural Core...</p>
+        `;
+
+        setTimeout(() => {
+
+            chapterText.innerHTML += `
+                <p>> N.O.V.A Interface Online</p>
+            `;
+
+            setTimeout(() => {
+
+                chapterText.innerHTML += `
+                    <p>> Restoring Tactical Database...</p>
+                `;
+
+                setTimeout(() => {
+
+                    chapterText.innerHTML += `
+                        <p>> Synchronization Success</p>
+                    `;
+
+                    chapterNextBtn.style.display = "inline-block";
+
+                    chapterState = 3;
+
+                }, 1000);
+
+            }, 1000);
+
+        }, 1000);
+
+    }, 1000);
+
+}, 1000);
 
     const progressFill = document.getElementById("progressFill");
     const progressText = document.getElementById("progressText");
