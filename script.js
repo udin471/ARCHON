@@ -270,9 +270,11 @@ function openChapter00() {
         syncPercent.textContent = "0%";
     }
 
-    chapterText.innerHTML = `
-        <p>System Booting...</p>
-    `;
+    chapterIndex = 0;
+
+chapterText.innerHTML = `
+    <p>${chapter00Story[chapterIndex]}</p>
+`;
 
     chapterNextBtn.style.display = "inline-block";
     chapterNextBtn.disabled = false;
