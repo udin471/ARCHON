@@ -206,8 +206,7 @@ function goToMenu(currentPage) {
 
     function openMission() {
 
-        menu.style.display = "none";
-        missionPage.style.display = "block";
+    showPage(missionPage);
 
     }
 
