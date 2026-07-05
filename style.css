@@ -58,7 +58,9 @@ body {
     width: 180px;
     margin-bottom: 25px;
 
-    animation: pulse 2s infinite ease-in-out;
+    animation:
+        pulse 2s infinite ease-in-out,
+        archonFlicker 6s infinite;
 }
 
 .tagline {
