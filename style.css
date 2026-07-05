@@ -268,3 +268,41 @@ button:hover {
     }
 
 }
+
+/* ======================================
+   CHAPTER BUTTON
+====================================== */
+
+.chapter-button {
+
+    width: 100%;
+
+    background: transparent;
+    border: none;
+
+    color: #49d9ff;
+
+    font-family: Consolas, monospace;
+    font-size: 22px;
+
+    text-align: left;
+
+    padding: 6px 0;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+.chapter-button:hover {
+
+    color: white;
+
+    text-shadow:
+        0 0 8px #49d9ff,
+        0 0 18px #49d9ff;
+
+    transform: translateX(8px);
+
+}
