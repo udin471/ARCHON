@@ -154,24 +154,12 @@ if (!boot || !bootText || !enterBtn || !menu) {
             const item = document.createElement("div");
 
             item.className = "menu-item";
-            const currentItem = menuItems[index];
+item.textContent = menuItems[index];
 
-item.textContent = currentItem.title;
-
-item.addEventListener("click", currentItem.action);
-
-            menu.appendChild(item);
-
-            index++;
-
-            setTimeout(showNext, 400);
-
-        }
-
-        showNext();
-
-    }
-
+if (menuItems[index] === "MISSION") {
+    item.addEventListener("click", openMission);
+}
+            
     // ======================================
     // MISSION PAGE
     // ======================================
