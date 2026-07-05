@@ -200,7 +200,24 @@ if (!boot || !bootText || !enterBtn || !menu) {
 
     }
 
+     // ======================================
+     // MAIN STORY PAGE
+     // ======================================
 
+function openMainStory() {
+
+    menu.style.display = "none";
+    mainStoryPage.style.display = "block";
+
+}
+
+function closeMainStory() {
+
+    mainStoryPage.style.display = "none";
+    menu.style.display = "flex";
+
+}
+    
     // ======================================
     // BUTTON EVENTS
     // ======================================
