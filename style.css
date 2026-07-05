@@ -218,3 +218,38 @@ button:hover {
     }
 
 }
+
+@keyframes archonFlicker {
+
+    0%, 90%, 100% {
+        opacity: 1;
+        filter:
+            drop-shadow(0 0 10px #49d9ff)
+            drop-shadow(0 0 20px #49d9ff);
+    }
+
+    91% {
+        opacity: .25;
+    }
+
+    92% {
+        opacity: 1;
+    }
+
+    93% {
+        opacity: .15;
+    }
+
+    94% {
+        opacity: 1;
+    }
+
+    95% {
+        opacity: .55;
+    }
+
+    96% {
+        opacity: 1;
+    }
+
+}
