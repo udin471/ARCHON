@@ -21,6 +21,8 @@ const chapterReturnBtn = document.getElementById("chapterReturnBtn");
 const chapter00Btn = document.getElementById("chapter00Btn");
 const chapterNextBtn = document.getElementById("chapterNextBtn");
 const chapterText = document.getElementById("chapterText");
+const syncBar = document.getElementById("syncBar");
+const syncPercent = document.getElementById("syncPercent");
 
 // ======================================
 // HTML VALIDATION
