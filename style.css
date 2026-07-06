@@ -366,3 +366,53 @@ button:not(.chapter-button):hover {
     letter-spacing: 3px;
 
 }
+
+/* ======================================
+   TERMINAL ENGINE
+====================================== */
+
+#chapterText {
+
+    line-height: 1.8;
+
+    white-space: pre-wrap;
+
+    overflow-y: auto;
+
+}
+
+#chapterText p {
+
+    margin: 6px 0;
+
+}
+
+.cursor {
+
+    display: inline-block;
+
+    animation: blinkCursor .8s infinite;
+
+}
+
+@keyframes blinkCursor {
+
+    0% {
+
+        opacity: 1;
+
+    }
+
+    50% {
+
+        opacity: 0;
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+    }
+
+}
