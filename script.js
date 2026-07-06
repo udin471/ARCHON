@@ -346,13 +346,15 @@ function startSynchronization() {
 
             }
 
-            chapterText.innerHTML += `
-                <p>> ${messages[i]}</p>
-            `;
+            (async () => {
 
-            i++;
+    await terminalType(messages[i]);
 
-            setTimeout(nextMessage, 1000);
+    i++;
+
+    setTimeout(nextMessage, 350);
+
+})();
 
         }
 
