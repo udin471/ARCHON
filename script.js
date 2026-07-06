@@ -306,6 +306,7 @@ function startSynchronization() {
         const value = progressSteps[index];
 
         progressFill.style.width = value + "%";
+        progressFill.style.background = "red";
         progressText.textContent = value + "%";
 
         index++;
