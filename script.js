@@ -3,6 +3,7 @@
 // Version 2.1
 // ======================================
 
+
 // ======================================
 // ELEMENTS
 // ======================================
@@ -295,10 +296,7 @@ function startSynchronization() {
 
     const progressFill = document.getElementById("progressFill");
     const progressText = document.getElementById("progressText");
-console.log(progressFill);
-console.log(progressFill.offsetWidth);
-console.log(progressFill.parentElement.offsetWidth);
-    
+
     const progressSteps = [0, 20, 45, 67, 89, 100];
 
     let index = 0;
@@ -308,7 +306,6 @@ console.log(progressFill.parentElement.offsetWidth);
         const value = progressSteps[index];
 
         progressFill.style.width = value + "%";
-        progressFill.style.background = "red";
         progressText.textContent = value + "%";
 
         index++;
@@ -349,15 +346,13 @@ console.log(progressFill.parentElement.offsetWidth);
 
             }
 
-            (async () => {
+            chapterText.innerHTML += `
+                <p>> ${messages[i]}</p>
+            `;
 
-    await terminalType(messages[i]);
+            i++;
 
-    i++;
-
-    setTimeout(nextMessage, 350);
-
-})();
+            setTimeout(nextMessage, 1000);
 
         }
 
@@ -452,37 +447,24 @@ if (chapterReturnBtn) {
     }
 
     // ======================================
-    // TERMINAL ENGINE
+    // TERMINAL OUTPUT
     // ======================================
 
-function sleep(ms) {
+function terminalLine(text, delay) {
 
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise(resolve => {
 
-}
+        setTimeout(() => {
 
-async function terminalType(text, speed = 35) {
+            chapterText.innerHTML += `
+                <p>> ${text}</p>
+            `;
 
-    const line = document.createElement("p");
+            resolve();
 
-    line.innerHTML = `> <span class="terminal-line"></span><span class="cursor">█</span>`;
+        }, delay);
 
-    chapterText.appendChild(line);
-
-    const output = line.querySelector(".terminal-line");
-    const cursor = line.querySelector(".cursor");
-
-    for (let i = 0; i < text.length; i++) {
-
-        output.textContent += text.charAt(i);
-
-        chapterText.scrollTop = chapterText.scrollHeight;
-
-        await sleep(speed);
-
-    }
-
-    cursor.remove();
+    });
 
 }
     
