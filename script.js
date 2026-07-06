@@ -447,24 +447,37 @@ if (chapterReturnBtn) {
     }
 
     // ======================================
-    // TERMINAL OUTPUT
+    // TERMINAL ENGINE
     // ======================================
 
-function terminalLine(text, delay) {
+function sleep(ms) {
 
-    return new Promise(resolve => {
+    return new Promise(resolve => setTimeout(resolve, ms));
 
-        setTimeout(() => {
+}
 
-            chapterText.innerHTML += `
-                <p>> ${text}</p>
-            `;
+async function terminalType(text, speed = 35) {
 
-            resolve();
+    const line = document.createElement("p");
 
-        }, delay);
+    line.innerHTML = `> <span class="terminal-line"></span><span class="cursor">█</span>`;
 
-    });
+    chapterText.appendChild(line);
+
+    const output = line.querySelector(".terminal-line");
+    const cursor = line.querySelector(".cursor");
+
+    for (let i = 0; i < text.length; i++) {
+
+        output.textContent += text.charAt(i);
+
+        chapterText.scrollTop = chapterText.scrollHeight;
+
+        await sleep(speed);
+
+    }
+
+    cursor.remove();
 
 }
     
