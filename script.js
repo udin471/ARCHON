@@ -296,7 +296,10 @@ function startSynchronization() {
 
     const progressFill = document.getElementById("progressFill");
     const progressText = document.getElementById("progressText");
-
+console.log(progressFill);
+console.log(progressFill.offsetWidth);
+console.log(progressFill.parentElement.offsetWidth);
+    
     const progressSteps = [0, 20, 45, 67, 89, 100];
 
     let index = 0;
