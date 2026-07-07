@@ -453,29 +453,15 @@ function startSynchronization() {
 
     function nextMessage() {
 
-        if (i >= messages.length) {
+    if (index >= messages.length) {
 
-            setTimeout(() => {
+        setTimeout(() => {
 
-                openArchonProfile();
+            openArchonProfile();
 
-            }, 1500);
+        }, 1200);
 
-            return;
-
-        }
-
-        chapterText.innerHTML += `
-            <p>> ${messages[i]}</p>
-        `;
-
-        i++;
-
-        setTimeout(nextMessage, 1000);
-
-    }
-
-    nextMessage();
+        return;
 
     }
 
@@ -487,7 +473,7 @@ function startSynchronization() {
 
     setTimeout(nextMessage, 1000);
 
-        }
+    }
 
         nextMessage();
 
