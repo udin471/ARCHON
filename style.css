@@ -366,3 +366,44 @@ button:not(.chapter-button):hover {
     letter-spacing: 3px;
 
 }
+
+ /* ======================================
+   ARCHIVE LOADING
+  ====================================== */
+
+#archiveLoadingText {
+
+    line-height: 2;
+    font-size: 18px;
+
+}
+
+#archiveLoadingText p {
+
+    margin: 8px 0;
+
+    opacity: 0;
+
+    animation: fadeIn .4s forwards;
+
+}
+
+/* ======================================
+   ARCHON PROFILE
+====================================== */
+
+#archonProfileContent {
+
+    width: 100%;
+
+    line-height: 1.8;
+
+    font-size: 18px;
+
+}
+
+#archonProfileReturnBtn {
+
+    margin-top: 40px;
+
+}
