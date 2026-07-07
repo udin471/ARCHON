@@ -22,6 +22,12 @@ const chapterPage = document.getElementById("chapterPage");
 const chapterReturnBtn = document.getElementById("chapterReturnBtn");
 const chapter00Btn = document.getElementById("chapter00Btn");
 const archonProfileBtn = document.getElementById("archonProfileBtn");
+const archiveLoadingPage = document.getElementById("archiveLoadingPage");
+const archiveLoadingText = document.getElementById("archiveLoadingText");
+
+const archonProfilePage = document.getElementById("archonProfilePage");
+const archonProfileContent = document.getElementById("archonProfileContent");
+const archonProfileReturnBtn = document.getElementById("archonProfileReturnBtn");
 const chapterNextBtn = document.getElementById("chapterNextBtn");
 const chapterText = document.getElementById("chapterText");
 
