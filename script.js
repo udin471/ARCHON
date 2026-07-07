@@ -74,6 +74,8 @@ if (!boot || !bootText || !enterBtn || !menu) {
     databasePage.style.display = "none";
     mainStoryPage.style.display = "none";
     chapterPage.style.display = "none";
+    archiveLoadingPage.style.display = "none";
+archonProfilePage.style.display = "none";
     
     // ======================================
     // TYPEWRITER EFFECT
