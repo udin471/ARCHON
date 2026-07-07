@@ -599,22 +599,29 @@ function terminalLine(text, delay = 600) {
 
 }
 
-async function terminalSequence(lines) {
+async function terminalSequence(target, lines) {
 
     for (const line of lines) {
 
-        if (typeof line === "string") {
+        const data = typeof line === "string"
+            ? { text: line, delay: 600 }
+            : line;
 
-            await terminalLine(line);
+        await new Promise(resolve => {
 
-        } else {
+            setTimeout(() => {
 
-            await terminalLine(
-                line.text,
-                line.delay ?? 600
-            );
+                target.innerHTML += `
+                    <p>> ${data.text}</p>
+                `;
 
-        }
+                target.scrollTop = target.scrollHeight;
+
+                resolve();
+
+            }, data.delay);
+
+        });
 
     }
 
