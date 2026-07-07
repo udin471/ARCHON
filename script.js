@@ -268,11 +268,19 @@ function openArchonLoading() {
 
     setTimeout(() => {
 
+    archiveLoadingText.innerHTML += `
+        <p>Establishing Secure Connection...</p>
+    `;
+
+    setTimeout(() => {
+
         archiveLoadingText.innerHTML += `
-            <p>Establishing Secure Connection...</p>
+            <p>N.O.V.A : Hello, Commander.</p>
         `;
 
-    }, 1000);
+    }, 1200);
+
+}, 1000);
 
 }, 1000);
 
