@@ -252,9 +252,21 @@ function closeDatabase() {
 
 function openArchonLoading() {
 
-    databasePage.style.display = "none";
+    databasePage.style.display = "none";
 
-    showPage(archiveLoadingPage);
+    showPage(archiveLoadingPage);
+
+    archiveLoadingText.innerHTML = `
+        <p>Initializing...</p>
+    `;
+
+    setTimeout(() => {
+
+        archiveLoadingText.innerHTML += `
+            <p>Requesting Access...</p>
+        `;
+
+    }, 1000);
 
 }
 
