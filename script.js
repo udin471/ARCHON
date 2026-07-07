@@ -63,6 +63,7 @@ if (!boot || !bootText || !enterBtn || !menu) {
     enterBtn.style.display = "none";
     menu.style.display = "none";
     missionPage.style.display = "none";
+    databasePage.style.display = "none";
     mainStoryPage.style.display = "none";
     chapterPage.style.display = "none";
     
