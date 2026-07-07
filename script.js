@@ -262,13 +262,19 @@ function openArchonLoading() {
 
     const messages = [
 
-        "Requesting Access...",
+    "Requesting Access...",
 
-        "Establishing Secure Connection...",
+    "Establishing Secure Connection...",
 
-        "N.O.V.A : Hello, Commander."
+    "N.O.V.A : Hello, Commander.",
 
-    ];
+    "Verifying Credentials...",
+
+    "Identity Confirmed.",
+
+    "Access Granted."
+
+];
 
     let index = 0;
 
