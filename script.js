@@ -527,10 +527,10 @@ if (archonProfileReturnBtn) {
     }
     
     // ======================================
-    // TERMINAL OUTPUT
+    // TERMINAL ENGINE v1.0
     // ======================================
 
-function terminalLine(text, delay) {
+function terminalLine(text, delay = 600) {
 
     return new Promise(resolve => {
 
@@ -545,6 +545,27 @@ function terminalLine(text, delay) {
         }, delay);
 
     });
+
+}
+
+async function terminalSequence(lines) {
+
+    for (const line of lines) {
+
+        if (typeof line === "string") {
+
+            await terminalLine(line);
+
+        } else {
+
+            await terminalLine(
+                line.text,
+                line.delay ?? 600
+            );
+
+        }
+
+    }
 
 }
     
