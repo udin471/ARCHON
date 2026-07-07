@@ -534,7 +534,7 @@ if (archonProfileReturnBtn) {
     // ARCHIVE TERMINAL
     // ======================================
 
-async function terminalArchiveSequence() {
+async async function terminalArchiveSequence() {
 
     const lines = [
 
@@ -554,26 +554,16 @@ async function terminalArchiveSequence() {
 
     archiveLoadingText.innerHTML = "";
 
-    for (const line of lines) {
+    await terminalSequence(
+        archiveLoadingText,
+        lines
+    );
 
-        await new Promise(resolve => {
+    setTimeout(() => {
 
-            setTimeout(() => {
+        openArchonProfile();
 
-                archiveLoadingText.innerHTML += `
-                    <p>> ${line.text}</p>
-                `;
-
-                archiveLoadingText.scrollTop =
-                    archiveLoadingText.scrollHeight;
-
-                resolve();
-
-            }, line.delay);
-
-        });
-
-    }
+    }, 1200);
 
 }
     
