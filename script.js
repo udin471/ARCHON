@@ -459,33 +459,27 @@ function startSynchronization() {
 
     function nextMessage() {
 
-    if (index >= messages.length) {
-
-        setTimeout(() => {
-
-            openArchonProfile();
-
-        }, 1200);
+    if (i >= messages.length) {
 
         return;
 
     }
 
-    archiveLoadingText.innerHTML += `
-        <p>${messages[index]}</p>
+    chapterText.innerHTML += `
+        <p>> ${messages[i]}</p>
     `;
 
-    index++;
+    i++;
 
     setTimeout(nextMessage, 1000);
 
-    }
+}
 
-        nextMessage();
+nextMessage();
 
-    }
+}
 
-    updateProgress();
+updateProgress();
 
 }
     
