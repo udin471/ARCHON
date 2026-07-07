@@ -43,592 +43,517 @@ let chapterState = 0;
 
 if (!boot || !bootText || !enterBtn || !menu) {
 
-    console.error("ARCHON ERROR: Ada elemen HTML yang tidak ditemukan.");
+    console.error("ARCHON ERROR: Ada elemen HTML yang tidak ditemukan.");
 
 } else {
 
-    // ======================================
-    // SETTINGS
-    // ======================================
+    // ======================================
+    // SETTINGS
+    // ======================================
 
-    const bootMessages = [
-        "BOOTING SYSTEM",
-        "CHECKING MEMORY",
-        "MEMORY CORRUPTED",
-        "CONNECTING TO N.O.V.A",
-        "LINK ESTABLISHED",
-        "WELCOME NPC5643627"
-    ];
+    const bootMessages = [
+        "BOOTING SYSTEM",
+        "CHECKING MEMORY",
+        "MEMORY CORRUPTED",
+        "CONNECTING TO N.O.V.A",
+        "LINK ESTABLISHED",
+        "WELCOME NPC5643627"
+    ];
 
-    const typingSpeed = 160;
-    const waitAfterMessage = 1200;
+    const typingSpeed = 160;
+    const waitAfterMessage = 1200;
 
 
-    // ======================================
-    // INITIAL STATE
-    // ======================================
+    // ======================================
+    // INITIAL STATE
+    // ======================================
 
-    enterBtn.style.display = "none";
-    menu.style.display = "none";
-    missionPage.style.display = "none";
-    databasePage.style.display = "none";
-    mainStoryPage.style.display = "none";
-    chapterPage.style.display = "none";
-    archiveLoadingPage.style.display = "none";
+    enterBtn.style.display = "none";
+    menu.style.display = "none";
+    missionPage.style.display = "none";
+    databasePage.style.display = "none";
+    mainStoryPage.style.display = "none";
+    chapterPage.style.display = "none";
+    archiveLoadingPage.style.display = "none";
 archonProfilePage.style.display = "none";
-    
-    // ======================================
-    // TYPEWRITER EFFECT
-    // ======================================
+    
+    // ======================================
+    // TYPEWRITER EFFECT
+    // ======================================
 
-    function typeWriter(text, callback) {
+    function typeWriter(text, callback) {
 
-        let index = 0;
+        let index = 0;
 
-        bootText.textContent = "";
+        bootText.textContent = "";
 
-        const typing = setInterval(() => {
+        const typing = setInterval(() => {
 
-            bootText.textContent += text.charAt(index);
+            bootText.textContent += text.charAt(index);
 
-            index++;
+            index++;
 
-            if (index >= text.length) {
+            if (index >= text.length) {
 
-                clearInterval(typing);
+                clearInterval(typing);
 
-                let dots = 0;
+                let dots = 0;
 
-                const dotAnimation = setInterval(() => {
+                const dotAnimation = setInterval(() => {
 
-                    dots++;
+                    dots++;
 
-                    bootText.textContent = text + ".".repeat(dots);
+                    bootText.textContent = text + ".".repeat(dots);
 
-                    if (dots >= 3) {
+                    if (dots >= 3) {
 
-                        clearInterval(dotAnimation);
+                        clearInterval(dotAnimation);
 
-                        setTimeout(callback, waitAfterMessage + 600);
+                        setTimeout(callback, waitAfterMessage + 600);
 
-                    }
+                    }
 
-                }, 500);
+                }, 500);
 
-            }
+            }
 
-        }, typingSpeed);
+        }, typingSpeed);
 
-    }
-
-
-    // ======================================
-    // BOOT SEQUENCE
-    // ======================================
-
-    let currentMessage = 0;
-
-    function bootSequence() {
-
-        if (currentMessage >= bootMessages.length) {
-
-            bootText.textContent = "SYSTEM READY";
-
-            enterBtn.style.display = "inline-block";
-
-            return;
-
-        }
-
-        typeWriter(bootMessages[currentMessage], () => {
-
-            currentMessage++;
-
-            bootSequence();
-
-        });
-
-    }
+    }
 
 
-    // ======================================
-    // MENU
-    // ======================================
+    // ======================================
+    // BOOT SEQUENCE
+    // ======================================
 
-    const menuItems = [
-        "MISSION",
-        "MAIN STORY",
-        "DATABASE",
-        "ARCHIVE",
-        "SETTINGS"
-    ];
+    let currentMessage = 0;
 
-    function showMenu() {
+    function bootSequence() {
 
-        boot.style.display = "none";
+        if (currentMessage >= bootMessages.length) {
 
-        menu.style.display = "flex";
-        menu.innerHTML = "";
+            bootText.textContent = "SYSTEM READY";
 
-        let index = 0;
+            enterBtn.style.display = "inline-block";
 
-        function showNext() {
+            return;
 
-            if (index >= menuItems.length) return;
+        }
 
-            const item = document.createElement("div");
+        typeWriter(bootMessages[currentMessage], () => {
 
-            item.className = "menu-item";
-            item.textContent = menuItems[index];
+            currentMessage++;
 
-            if (menuItems[index] === "MISSION") {
+            bootSequence();
 
-                item.addEventListener("click", openMission);
+        });
 
-            }
+    }
 
-            if (menuItems[index] === "MAIN STORY") {
 
-    item.addEventListener("click", openMainStory);
+    // ======================================
+    // MENU
+    // ======================================
 
-            }
+    const menuItems = [
+        "MISSION",
+        "MAIN STORY",
+        "DATABASE",
+        "ARCHIVE",
+        "SETTINGS"
+    ];
 
-            if (menuItems[index] === "DATABASE") {
+    function showMenu() {
 
-    item.addEventListener("click", openDatabase);
+        boot.style.display = "none";
 
-            }
-            
-            menu.appendChild(item);
+        menu.style.display = "flex";
+        menu.innerHTML = "";
 
-            index++;
+        let index = 0;
 
-            setTimeout(showNext, 400);
+        function showNext() {
 
-        }
+            if (index >= menuItems.length) return;
 
-        showNext();
+            const item = document.createElement("div");
 
-    }
-    
-   // ======================================
-   // NAVIGATION SYSTEM
-   // ======================================
+            item.className = "menu-item";
+            item.textContent = menuItems[index];
+
+            if (menuItems[index] === "MISSION") {
+
+                item.addEventListener("click", openMission);
+
+            }
+
+            if (menuItems[index] === "MAIN STORY") {
+
+    item.addEventListener("click", openMainStory);
+
+            }
+
+            if (menuItems[index] === "DATABASE") {
+
+    item.addEventListener("click", openDatabase);
+
+            }
+            
+            menu.appendChild(item);
+
+            index++;
+
+            setTimeout(showNext, 400);
+
+        }
+
+        showNext();
+
+    }
+    
+   // ======================================
+   // NAVIGATION SYSTEM
+   // ======================================
 
 function showPage(page) {
 
-    menu.style.display = "none";
-    page.style.display = "flex";
+    menu.style.display = "none";
+    page.style.display = "flex";
 
 }
 
 function goToMenu(currentPage) {
 
-    currentPage.style.display = "none";
+    currentPage.style.display = "none";
 
-    showMenu();
+    showMenu();
 
 }
 
-    // ======================================
-    // DATABASE PAGE
-    // ======================================
+    // ======================================
+    // DATABASE PAGE
+    // ======================================
 
 function openDatabase() {
 
-    showPage(databasePage);
+    showPage(databasePage);
 
 }
 
 function closeDatabase() {
 
-    goToMenu(databasePage);
+    goToMenu(databasePage);
 
 }
 
-    // ======================================
-    // ARCHON PROFILE
-    // ======================================
+    // ======================================
+    // ARCHON PROFILE
+    // ======================================
 
-async function openArchonLoading() {
+function openArchonLoading() {
 
-    databasePage.style.display = "none";
+    databasePage.style.display = "none";
 
-    showPage(archiveLoadingPage);
-
-    archiveLoadingText.innerHTML = "";
-
-    await terminalArchiveSequence();
+    showPage(archiveLoadingPage);
 
 }
 
 function openArchonProfile() {
 
-    archiveLoadingPage.style.display = "none";
+    archiveLoadingPage.style.display = "none";
 
-    showPage(archonProfilePage);
+    showPage(archonProfilePage);
 
 }
 
 function closeArchonProfile() {
 
-    archonProfilePage.style.display = "none";
+    archonProfilePage.style.display = "none";
 
-    showPage(databasePage);
+    showPage(databasePage);
 
 }
-    
-    // ======================================
-    // MISSION PAGE
-    // ======================================
+    
+    // ======================================
+    // MISSION PAGE
+    // ======================================
 
-    function openMission() {
+    function openMission() {
 
-    showPage(missionPage);
+    showPage(missionPage);
 
-    }
+    }
 
-    function closeMission() {
+    function closeMission() {
 
-    goToMenu(missionPage);
+    goToMenu(missionPage);
 
-    }
+    }
 
-     // ======================================
-     // MAIN STORY PAGE
-     // ======================================
+     // ======================================
+     // MAIN STORY PAGE
+     // ======================================
 
 function openMainStory() {
 
-    showPage(mainStoryPage);
+    showPage(mainStoryPage);
 
 }
 
 function closeMainStory() {
 
-    goToMenu(mainStoryPage);
+    goToMenu(mainStoryPage);
 
 }
 
-    // ======================================
-    // CHAPTER PAGE
-    // ======================================
+    // ======================================
+    // CHAPTER PAGE
+    // ======================================
 
 function openChapter00() {
 
-    chapterState = 0;
+    chapterState = 0;
 
-    showPage(chapterPage);
+    showPage(chapterPage);
 
-    chapterText.innerHTML = `
-        <p>Rebooting system...</p>
-    `;
+    chapterText.innerHTML = `
+        <p>Rebooting system...</p>
+    `;
 
-    chapterNextBtn.style.display = "inline-block";
-    chapterReturnBtn.style.display = "none";
+    chapterNextBtn.style.display = "inline-block";
+    chapterReturnBtn.style.display = "none";
 
 }
 
 function closeChapter00() {
 
-    chapterPage.style.display = "none";
-    showPage(mainStoryPage);
+    chapterPage.style.display = "none";
+    showPage(mainStoryPage);
 
 }
 
-    // ======================================
-    // SYNCHRONIZATION ENGINE
-    // ======================================
+    // ======================================
+    // SYNCHRONIZATION ENGINE
+    // ======================================
 
 function startSynchronization() {
 
-    chapterText.innerHTML = `
-        <p>Synchronizing...</p>
+    chapterText.innerHTML = `
+        <p>Synchronizing...</p>
 
-        <div class="progress-container">
+        <div class="progress-container">
 
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressFill"></div>
-            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
 
-            <div class="progress-text" id="progressText">
-                0%
-            </div>
+            <div class="progress-text" id="progressText">
+                0%
+            </div>
 
-        </div>
-    `;
+        </div>
+    `;
 
-    chapterNextBtn.style.display = "none";
+    chapterNextBtn.style.display = "none";
 
-    const progressFill = document.getElementById("progressFill");
-    const progressText = document.getElementById("progressText");
+    const progressFill = document.getElementById("progressFill");
+    const progressText = document.getElementById("progressText");
 
-    const progressSteps = [0, 20, 45, 67, 89, 100];
+    const progressSteps = [0, 20, 45, 67, 89, 100];
 
-    let index = 0;
+    let index = 0;
 
-    function updateProgress() {
+    function updateProgress() {
 
-        const value = progressSteps[index];
+        const value = progressSteps[index];
 
-        progressFill.style.width = value + "%";
-        progressText.textContent = value + "%";
+        progressFill.style.width = value + "%";
+        progressText.textContent = value + "%";
 
-        index++;
+        index++;
 
-        if (index < progressSteps.length) {
+        if (index < progressSteps.length) {
 
-            setTimeout(updateProgress, 900);
+            setTimeout(updateProgress, 900);
 
-        } else {
+        } else {
 
-            setTimeout(showBootMessages, 900);
+            setTimeout(showBootMessages, 900);
 
-        }
+        }
 
-    }
+    }
 
-    function showBootMessages() {
+    function showBootMessages() {
 
-        const messages = [
-            "Verifying Memory...",
-            "Memory Integrity : OK",
-            "Loading Neural Core...",
-            "N.O.V.A Interface Online",
-            "Restoring Tactical Database...",
-            "Synchronization Success"
-        ];
+        const messages = [
+            "Verifying Memory...",
+            "Memory Integrity : OK",
+            "Loading Neural Core...",
+            "N.O.V.A Interface Online",
+            "Restoring Tactical Database...",
+            "Synchronization Success"
+        ];
 
-        let i = 0;
+        let i = 0;
 
-        function nextMessage() {
+        function nextMessage() {
 
-            if (i >= messages.length) {
+            if (i >= messages.length) {
 
-                chapterNextBtn.style.display = "inline-block";
-                chapterState = 3;
+                chapterNextBtn.style.display = "inline-block";
+                chapterState = 3;
 
-                return;
+                return;
 
-            }
+            }
 
-            chapterText.innerHTML += `
-                <p>> ${messages[i]}</p>
-            `;
+            chapterText.innerHTML += `
+                <p>> ${messages[i]}</p>
+            `;
 
-            i++;
+            i++;
 
-            setTimeout(nextMessage, 1000);
+            setTimeout(nextMessage, 1000);
 
-        }
+        }
 
-        nextMessage();
+        nextMessage();
 
-    }
+    }
 
-    updateProgress();
+    updateProgress();
 
 }
-    
-    // ======================================
-    // BUTTON EVENTS
-    // ======================================
+    
+    // ======================================
+    // BUTTON EVENTS
+    // ======================================
 
-    enterBtn.addEventListener("click", () => {
+    enterBtn.addEventListener("click", () => {
 
-        showMenu();
+        showMenu();
 
-    });
+    });
 
-    if (returnBtn) {
+    if (returnBtn) {
 
-        returnBtn.addEventListener("click", closeMission);
+        returnBtn.addEventListener("click", closeMission);
 
-    }
+    }
 
-    if (databaseReturnBtn) {
+    if (databaseReturnBtn) {
 
-    databaseReturnBtn.addEventListener("click", closeDatabase);
+    databaseReturnBtn.addEventListener("click", closeDatabase);
 
-    }
-    
-    if (mainStoryReturnBtn) {
+    }
+    
+    if (mainStoryReturnBtn) {
 
-    mainStoryReturnBtn.addEventListener("click", closeMainStory);
+    mainStoryReturnBtn.addEventListener("click", closeMainStory);
 
-    }
+    }
 
-    if (chapter00Btn) {
+    if (chapter00Btn) {
 
-    console.log("CHAPTER BUTTON FOUND");
+    console.log("CHAPTER BUTTON FOUND");
 
-    chapter00Btn.addEventListener("click", () => {
+    chapter00Btn.addEventListener("click", () => {
 
-        console.log("CHAPTER CLICKED");
+        console.log("CHAPTER CLICKED");
 
-        openChapter00();
+        openChapter00();
 
-    });
+    });
 
-    }
+    }
 
 if (chapterReturnBtn) {
 
-    chapterReturnBtn.addEventListener("click", closeChapter00);
+    chapterReturnBtn.addEventListener("click", closeChapter00);
 
 }
 
 if (archonProfileBtn) {
 
-    archonProfileBtn.addEventListener("click", openArchonLoading);
+    archonProfileBtn.addEventListener("click", openArchonLoading);
 
 }
 
 if (archonProfileReturnBtn) {
 
-    archonProfileReturnBtn.addEventListener("click", closeArchonProfile);
+    archonProfileReturnBtn.addEventListener("click", closeArchonProfile);
 
 }
-    
-    if (chapterNextBtn) {
+    
+    if (chapterNextBtn) {
 
-    chapterNextBtn.addEventListener("click", () => {
+    chapterNextBtn.addEventListener("click", () => {
 
-        switch (chapterState) {
+        switch (chapterState) {
 
-            case 0:
+            case 0:
 
-    chapterText.innerHTML = `
-        <p>Initializing core...</p>
-    `;
+    chapterText.innerHTML = `
+        <p>Initializing core...</p>
+    `;
 
-    chapterState++;
+    chapterState++;
 
-    break;
+    break;
 
-            case 1:
+            case 1:
 
-    startSynchronization();
+    startSynchronization();
 
-    break;
+    break;
 
-            case 3:
+            case 3:
 
-                chapterText.innerHTML = `
-                    <p>Welcome ARCHON</p>
-                `;
+                chapterText.innerHTML = `
+                    <p>Welcome ARCHON</p>
+                `;
 
-                chapterNextBtn.style.display = "none";
-                chapterReturnBtn.style.display = "inline-block";
+                chapterNextBtn.style.display = "none";
+                chapterReturnBtn.style.display = "inline-block";
 
-                chapterState++;
-                break;
+                chapterState++;
+                break;
 
-        }
+        }
 
-    });
+    });
+
+    }
+    
+    // ======================================
+    // TERMINAL OUTPUT
+    // ======================================
+
+function terminalLine(text, delay) {
+
+    return new Promise(resolve => {
+
+        setTimeout(() => {
+
+            chapterText.innerHTML += `
+                <p>> ${text}</p>
+            `;
+
+            resolve();
+
+        }, delay);
+
+    });
+
+}
+    
+    // ======================================
+    // START SYSTEM
+    // ======================================
+    
+    bootSequence();
+
+    console.log("ARCHON SYSTEM READY");
 
     }
-
-    // ======================================
-    // ARCHIVE TERMINAL
-    // ======================================
-
-async function terminalArchiveSequence() {
-
-    const lines = [
-
-        { text: "Requesting Access...", delay: 700 },
-
-        { text: "Establishing Secure Connection...", delay: 900 },
-
-        { text: "N.O.V.A : Hello, Commander.", delay: 1200 },
-
-        { text: "Verifying Credentials...", delay: 900 },
-
-        { text: "Identity Confirmed.", delay: 900 },
-
-        { text: "Access Granted.", delay: 900 }
-
-    ];
-
-    archiveLoadingText.innerHTML = "";
-
-    await terminalSequence(
-        archiveLoadingText,
-        lines
-    );
-
-    setTimeout(() => {
-
-        openArchonProfile();
-
-    }, 1200);
-
-}
-    
-    // ======================================
-    // TERMINAL ENGINE v1.0
-    // ======================================
-
-function terminalLine(text, delay = 600) {
-
-    return new Promise(resolve => {
-
-        setTimeout(() => {
-
-            chapterText.innerHTML += `
-                <p>> ${text}</p>
-            `;
-
-            resolve();
-
-        }, delay);
-
-    });
-
-}
-
-async function terminalSequence(target, lines, callback = null) {
-
-    for (const line of lines) {
-
-        const data = typeof line === "string"
-            ? { text: line, delay: 600 }
-            : line;
-
-        await new Promise(resolve => {
-
-            setTimeout(() => {
-
-                target.innerHTML += `
-                    <p>> ${data.text}</p>
-                `;
-
-                target.scrollTop = target.scrollHeight;
-
-                resolve();
-
-            }, data.delay);
-
-        });
-
-    }
-
-    if (callback) {
-
-        callback();
-
-    }
-
-}
-    
-    // ======================================
-    // START SYSTEM
-    // ======================================
-    
-    bootSequence();
-
-    console.log("ARCHON SYSTEM READY");
-
-}
