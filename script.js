@@ -13,6 +13,7 @@ const bootText = document.getElementById("bootText");
 const enterBtn = document.getElementById("enterBtn");
 const menu = document.getElementById("menu");
 const missionPage = document.getElementById("missionPage");
+const databasePage = document.getElementById("databasePage");
 const returnBtn = document.getElementById("returnBtn");
 const mainStoryPage = document.getElementById("mainStoryPage");
 const mainStoryReturnBtn = document.getElementById("mainStoryReturnBtn");
