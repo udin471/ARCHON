@@ -529,6 +529,53 @@ if (archonProfileReturnBtn) {
     });
 
     }
+
+    // ======================================
+    // ARCHIVE TERMINAL
+    // ======================================
+
+async function terminalArchiveSequence() {
+
+    const lines = [
+
+        { text: "Requesting Access...", delay: 700 },
+
+        { text: "Establishing Secure Connection...", delay: 900 },
+
+        { text: "N.O.V.A : Hello, Commander.", delay: 1200 },
+
+        { text: "Verifying Credentials...", delay: 900 },
+
+        { text: "Identity Confirmed.", delay: 900 },
+
+        { text: "Access Granted.", delay: 900 }
+
+    ];
+
+    archiveLoadingText.innerHTML = "";
+
+    for (const line of lines) {
+
+        await new Promise(resolve => {
+
+            setTimeout(() => {
+
+                archiveLoadingText.innerHTML += `
+                    <p>> ${line.text}</p>
+                `;
+
+                archiveLoadingText.scrollTop =
+                    archiveLoadingText.scrollHeight;
+
+                resolve();
+
+            }, line.delay);
+
+        });
+
+    }
+
+}
     
     // ======================================
     // TERMINAL ENGINE v1.0
