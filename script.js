@@ -260,21 +260,33 @@ function openArchonLoading() {
         <p>Initializing...</p>
     `;
 
-    setTimeout(() => {
+    const messages = [
+
+        "Requesting Access...",
+
+        "Establishing Secure Connection...",
+
+        "N.O.V.A : Hello, Commander."
+
+    ];
+
+    let index = 0;
+
+    function nextMessage() {
+
+        if (index >= messages.length) return;
 
         archiveLoadingText.innerHTML += `
-            <p>Requesting Access...</p>
+            <p>${messages[index]}</p>
         `;
 
-        setTimeout(() => {
+        index++;
 
-            archiveLoadingText.innerHTML += `
-                <p>Establishing Secure Connection...</p>
-            `;
+        setTimeout(nextMessage, 1000);
 
-        }, 1000);
+    }
 
-    }, 1000);
+    setTimeout(nextMessage, 1000);
 
 }
 
