@@ -319,6 +319,8 @@ function openArchonLoading() {
 }
 
 setTimeout(nextMessage, 1000);
+    
+}
 
 function openArchonProfile() {
 
