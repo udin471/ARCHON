@@ -534,7 +534,7 @@ if (archonProfileReturnBtn) {
     // ARCHIVE TERMINAL
     // ======================================
 
-async async function terminalArchiveSequence() {
+async function terminalArchiveSequence() {
 
     const lines = [
 
