@@ -453,22 +453,25 @@ function startSynchronization() {
 
         function nextMessage() {
 
-            if (i >= messages.length) {
+    if (index >= messages.length) {
 
-                chapterNextBtn.style.display = "inline-block";
-                chapterState = 3;
+        setTimeout(() => {
 
-                return;
+            openArchonProfile();
 
-            }
+        }, 1500);
 
-            chapterText.innerHTML += `
-                <p>> ${messages[i]}</p>
-            `;
+        return;
 
-            i++;
+    }
 
-            setTimeout(nextMessage, 1000);
+    archiveLoadingText.innerHTML += `
+        <p>${messages[index]}</p>
+    `;
+
+    index++;
+
+    setTimeout(nextMessage, 1000);
 
         }
 
