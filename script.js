@@ -219,6 +219,22 @@ function goToMenu(currentPage) {
     showMenu();
 
 }
+
+    // ======================================
+    // DATABASE PAGE
+    // ======================================
+
+function openDatabase() {
+
+    showPage(databasePage);
+
+}
+
+function closeDatabase() {
+
+    goToMenu(databasePage);
+
+}
     
     // ======================================
     // MISSION PAGE
