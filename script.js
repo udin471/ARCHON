@@ -465,7 +465,11 @@ function startSynchronization() {
 
     if (i >= messages.length) {
 
-        return;
+    chapterState = 3;
+
+    chapterNextBtn.style.display = "inline-block";
+
+    return;
 
     }
 
