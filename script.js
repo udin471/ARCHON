@@ -474,6 +474,18 @@ if (chapterReturnBtn) {
 
 }
 
+if (archonProfileBtn) {
+
+    archonProfileBtn.addEventListener("click", openArchonLoading);
+
+}
+
+if (archonProfileReturnBtn) {
+
+    archonProfileReturnBtn.addEventListener("click", closeArchonProfile);
+
+}
+    
     if (chapterNextBtn) {
 
     chapterNextBtn.addEventListener("click", () => {
