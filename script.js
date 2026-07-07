@@ -599,7 +599,7 @@ function terminalLine(text, delay = 600) {
 
 }
 
-async function terminalSequence(target, lines) {
+async function terminalSequence(target, lines, callback = null) {
 
     for (const line of lines) {
 
@@ -622,6 +622,12 @@ async function terminalSequence(target, lines) {
             }, data.delay);
 
         });
+
+    }
+
+    if (callback) {
+
+        callback();
 
     }
 
