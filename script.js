@@ -250,11 +250,15 @@ function closeDatabase() {
     // ARCHON PROFILE
     // ======================================
 
-function openArchonLoading() {
+async function openArchonLoading() {
 
     databasePage.style.display = "none";
 
     showPage(archiveLoadingPage);
+
+    archiveLoadingText.innerHTML = "";
+
+    await terminalArchiveSequence();
 
 }
 
