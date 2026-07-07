@@ -440,28 +440,42 @@ function startSynchronization() {
 
     function showBootMessages() {
 
-        const messages = [
-            "Verifying Memory...",
-            "Memory Integrity : OK",
-            "Loading Neural Core...",
-            "N.O.V.A Interface Online",
-            "Restoring Tactical Database...",
-            "Synchronization Success"
-        ];
+    const messages = [
+        "Verifying Memory...",
+        "Memory Integrity : OK",
+        "Loading Neural Core...",
+        "N.O.V.A Interface Online",
+        "Restoring Tactical Database...",
+        "Synchronization Success"
+    ];
 
-        let i = 0;
+    let i = 0;
 
-        function nextMessage() {
+    function nextMessage() {
 
-    if (index >= messages.length) {
+        if (i >= messages.length) {
 
-        setTimeout(() => {
+            setTimeout(() => {
 
-            openArchonProfile();
+                openArchonProfile();
 
-        }, 1500);
+            }, 1500);
 
-        return;
+            return;
+
+        }
+
+        chapterText.innerHTML += `
+            <p>> ${messages[i]}</p>
+        `;
+
+        i++;
+
+        setTimeout(nextMessage, 1000);
+
+    }
+
+    nextMessage();
 
     }
 
