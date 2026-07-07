@@ -407,3 +407,24 @@ button:not(.chapter-button):hover {
     margin-top: 40px;
 
 }
+
+/* ======================================
+   ARCHON IMAGE
+====================================== */
+
+#archonImage {
+
+    display: block;
+
+    width: 100%;
+    max-width: 420px;
+
+    margin: 0 auto;
+
+    border: 2px solid #49d9ff;
+
+    box-shadow:
+        0 0 10px #49d9ff,
+        0 0 20px rgba(73,217,255,.35);
+
+}
