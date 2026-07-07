@@ -245,6 +245,34 @@ function closeDatabase() {
     goToMenu(databasePage);
 
 }
+
+    // ======================================
+    // ARCHON PROFILE
+    // ======================================
+
+function openArchonLoading() {
+
+    databasePage.style.display = "none";
+
+    showPage(archiveLoadingPage);
+
+}
+
+function openArchonProfile() {
+
+    archiveLoadingPage.style.display = "none";
+
+    showPage(archonProfilePage);
+
+}
+
+function closeArchonProfile() {
+
+    archonProfilePage.style.display = "none";
+
+    showPage(databasePage);
+
+}
     
     // ======================================
     // MISSION PAGE
