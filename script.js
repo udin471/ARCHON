@@ -296,21 +296,27 @@ function openArchonLoading() {
 
     function nextMessage() {
 
-        if (index >= messages.length) return;
+    if (index >= messages.length) {
 
-        archiveLoadingText.innerHTML += `
-            <p>${messages[index]}</p>
-        `;
+        setTimeout(() => {
 
-        index++;
+            openArchonProfile();
 
-        setTimeout(nextMessage, 1000);
+        }, 1200);
+
+        return;
 
     }
 
+    archiveLoadingText.innerHTML += `
+        <p>${messages[index]}</p>
+    `;
+
+    index++;
+
     setTimeout(nextMessage, 1000);
 
-}
+    }
 
 function openArchonProfile() {
 
