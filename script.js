@@ -404,6 +404,12 @@ function startSynchronization() {
 
     }
 
+    if (databaseReturnBtn) {
+
+    databaseReturnBtn.addEventListener("click", closeDatabase);
+
+    }
+    
     if (mainStoryReturnBtn) {
 
     mainStoryReturnBtn.addEventListener("click", closeMainStory);
