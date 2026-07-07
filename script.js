@@ -262,25 +262,19 @@ function openArchonLoading() {
 
     setTimeout(() => {
 
-    archiveLoadingText.innerHTML += `
-        <p>Requesting Access...</p>
-    `;
-
-    setTimeout(() => {
-
-    archiveLoadingText.innerHTML += `
-        <p>Requesting Access...</p>
-    `;
-
-    setTimeout(() => {
-
         archiveLoadingText.innerHTML += `
-            <p>Establishing Secure Connection...</p>
+            <p>Requesting Access...</p>
         `;
 
-    }, 1000);
+        setTimeout(() => {
 
-}, 1000);
+            archiveLoadingText.innerHTML += `
+                <p>Establishing Secure Connection...</p>
+            `;
+
+        }, 1000);
+
+    }, 1000);
 
 }
 
