@@ -272,7 +272,23 @@ function openArchonLoading() {
 
     "Identity Confirmed.",
 
-    "Access Granted."
+    "Access Granted.",
+
+    "Decrypting Archive...",
+
+    "Verifying Integrity...",
+
+    "Loading Image...",
+
+    "Loading Biography...",
+
+    "Rendering Interface...",
+
+    "Synchronization Complete.",
+
+    "A.R.C.H.O.N. Profile is ready.",
+
+    "Opening FILE 001..."
 
 ];
 
