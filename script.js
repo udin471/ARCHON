@@ -195,6 +195,12 @@ if (!boot || !bootText || !enterBtn || !menu) {
 
     }
 
+    if (menuItems[index] === "DATABASE") {
+
+    item.addEventListener("click", openDatabase);
+
+    }
+    
    // ======================================
    // NAVIGATION SYSTEM
    // ======================================
