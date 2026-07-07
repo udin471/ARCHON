@@ -184,6 +184,12 @@ if (!boot || !bootText || !enterBtn || !menu) {
     item.addEventListener("click", openMainStory);
 
             }
+
+            if (menuItems[index] === "DATABASE") {
+
+    item.addEventListener("click", openDatabase);
+
+            }
             
             menu.appendChild(item);
 
@@ -194,12 +200,6 @@ if (!boot || !bootText || !enterBtn || !menu) {
         }
 
         showNext();
-
-    }
-
-    if (menuItems[index] === "DATABASE") {
-
-    item.addEventListener("click", openDatabase);
 
     }
     
