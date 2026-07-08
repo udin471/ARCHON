@@ -464,9 +464,19 @@ button:not(.chapter-button):hover {
 
 .database-panel p {
 
-    margin: 10px 0;
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin: 0;
+
+    padding: 10px 0;
 
     letter-spacing: 1px;
+
+    border-bottom: 1px solid rgba(73,217,255,.12);
 
 }
 
