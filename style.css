@@ -469,3 +469,21 @@ button:not(.chapter-button):hover {
     letter-spacing: 1px;
 
 }
+
+.label {
+
+    display: inline-block;
+
+    width: 140px;
+
+    color: #b8dfff;
+
+}
+
+.value {
+
+    color: #49d9ff;
+
+    font-weight: bold;
+
+}
