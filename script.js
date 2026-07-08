@@ -324,9 +324,15 @@ setTimeout(nextMessage, 1000);
 
 function openArchonProfile() {
 
-    archiveLoadingPage.style.display = "none";
+    archiveLoadingPage.style.display = "none";
 
-    showPage(archonProfilePage);
+    showPage(archonProfilePage);
+
+    setTimeout(() => {
+
+        animateDatabaseValues();
+
+    }, 250);
 
 }
 
