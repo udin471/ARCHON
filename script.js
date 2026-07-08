@@ -627,37 +627,40 @@ function animateDatabaseValues() {
 
     const values = document.querySelectorAll(".data-value");
 
-    values.forEach(element => {
-
-        element.dataset.original = element.textContent;
-
-        element.textContent = "";
-
-    });
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
     values.forEach((element, index) => {
 
-        setTimeout(() => {
+        const finalText = element.dataset.original || element.textContent;
 
-            const text = element.dataset.original;
+        element.dataset.original = finalText;
 
-            let i = 0;
+        let iteration = 0;
 
-            const typing = setInterval(() => {
+        const interval = setInterval(() => {
 
-                element.textContent += text.charAt(i);
+            element.textContent = finalText
+                .split("")
+                .map((letter, i) => {
 
-                i++;
+                    if (i < iteration) return finalText[i];
 
-                if (i >= text.length) {
+                    return chars[Math.floor(Math.random() * chars.length)];
 
-                    clearInterval(typing);
+                })
+                .join("");
 
-                }
+            iteration += 0.5;
 
-            }, 25);
+            if (iteration >= finalText.length) {
 
-        }, index * 120);
+                clearInterval(interval);
+
+                element.textContent = finalText;
+
+            }
+
+        }, 35);
 
     });
 
