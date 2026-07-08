@@ -492,6 +492,10 @@ button:not(.chapter-button):hover {
 
 .value {
 
+    flex: 1;
+
+    text-align: right;
+
     color: #49d9ff;
 
     font-weight: bold;
