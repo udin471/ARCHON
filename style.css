@@ -513,6 +513,20 @@ button:not(.chapter-button):hover {
 
 }
 
+.database-panel p:has(br) {
+
+    display: block;
+
+    border-bottom: none;
+
+    line-height: 1.8;
+
+    padding: 0;
+
+    text-align: left;
+
+}
+
 .label {
 
     flex: 1;
