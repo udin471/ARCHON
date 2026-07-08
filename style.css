@@ -505,13 +505,31 @@ button:not(.chapter-button):hover {
 
 .database-panel h3 {
 
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
     margin-bottom: 18px;
 
     letter-spacing: 3px;
 
-    border-bottom: 1px solid rgba(73,217,255,.4);
+    color: #49d9ff;
 
-    padding-bottom: 8px;
+    text-transform: uppercase;
+
+}
+
+.database-panel h3::after {
+
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: rgba(73,217,255,.35);
 
 }
 
