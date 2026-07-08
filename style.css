@@ -518,6 +518,10 @@ button:not(.chapter-button):hover {
 
     animation: databaseFade .8s ease;
 
+   opacity: 0;
+
+animation: panelReveal .6s ease forwards;
+   
 }
 
 .image-panel {
