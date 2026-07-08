@@ -612,7 +612,51 @@ function terminalLine(text, delay) {
     });
 
 }
-    
+
+    // ======================================
+    // DATABASE TYPEWRITER
+    // ======================================
+
+function animateDatabaseValues() {
+
+    const values = document.querySelectorAll(".data-value");
+
+    values.forEach(element => {
+
+        element.dataset.original = element.textContent;
+
+        element.textContent = "";
+
+    });
+
+    values.forEach((element, index) => {
+
+        setTimeout(() => {
+
+            const text = element.dataset.original;
+
+            let i = 0;
+
+            const typing = setInterval(() => {
+
+                element.textContent += text.charAt(i);
+
+                i++;
+
+                if (i >= text.length) {
+
+                    clearInterval(typing);
+
+                }
+
+            }, 25);
+
+        }, index * 120);
+
+    });
+
+}
+    
     // ======================================
     // START SYSTEM
     // ======================================
