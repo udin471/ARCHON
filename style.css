@@ -526,6 +526,30 @@ animation: panelReveal .6s ease forwards;
 
 .image-panel {
 
+    animation-delay: .1s;
+
+}
+
+.database-panel:nth-of-type(2) {
+
+    animation-delay: .3s;
+
+}
+
+.database-panel:nth-of-type(3) {
+
+    animation-delay: .5s;
+
+}
+
+.database-panel:nth-of-type(4) {
+
+    animation-delay: .7s;
+
+}
+
+.image-panel {
+
     grid-column: 1 / -1;
 
     text-align: center;
