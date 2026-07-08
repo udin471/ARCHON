@@ -513,3 +513,16 @@ button:not(.chapter-button):hover {
     font-weight: bold;
 
 }
+
+/* ======================================
+   DATABASE STATUS
+====================================== */
+
+.status-active {
+
+    color: #33ff88;
+
+    text-shadow:
+        0 0 6px rgba(51,255,136,.6);
+
+}
