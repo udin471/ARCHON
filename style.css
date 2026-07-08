@@ -469,9 +469,11 @@ button:not(.chapter-button):hover {
 
 #archonImage:hover {
 
+    transform: scale(1.015);
+
     box-shadow:
-        0 0 18px #49d9ff,
-        0 0 35px rgba(73,217,255,.6);
+        0 0 15px rgba(73,217,255,.45),
+        0 0 35px rgba(73,217,255,.25);
 
 }
 
