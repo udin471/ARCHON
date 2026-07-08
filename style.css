@@ -415,6 +415,17 @@ button:not(.chapter-button):hover {
 #archonProfileContent {
 
     width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+    gap: 25px;
+
+    align-items: start;
 
     line-height: 1.8;
 
