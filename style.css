@@ -515,17 +515,19 @@ button:not(.chapter-button):hover {
 
 }
 
-.database-panel p:has(br) {
+.database-panel p {
 
-    display: block;
+    display: flex;
 
-    border-bottom: none;
+    justify-content: space-between;
 
-    line-height: 1.8;
+    align-items: center;
 
-    padding: 0;
+    gap: 20px;
 
-    text-align: left;
+    padding: 10px 0;
+
+    border-bottom: 1px solid rgba(73,217,255,.12);
 
 }
 
