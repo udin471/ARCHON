@@ -447,6 +447,8 @@ button:not(.chapter-button):hover {
 
     display: block;
 
+   grid-column: 1 / -1;
+   
     width: 100%;
     max-width: 420px;
 
