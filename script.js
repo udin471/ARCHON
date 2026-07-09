@@ -273,11 +273,41 @@ function openArchiveLogLoading() {
         <p>Accessing Archive...</p>
     `;
 
-    setTimeout(() => {
+    const messages = [
 
-        openArchiveLog001();
+        "Decrypting Historical Record...",
+        "Restoring Timeline...",
+        "Archive Restored."
 
-    }, 1000);
+    ];
+
+    let index = 0;
+
+    function nextMessage() {
+
+        if (index >= messages.length) {
+
+            setTimeout(() => {
+
+                openArchiveLog001();
+
+            }, 300);
+
+            return;
+
+        }
+
+        archiveLogLoadingText.innerHTML += `
+            <p>${messages[index]}</p>
+        `;
+
+        index++;
+
+        setTimeout(nextMessage, 350);
+
+    }
+
+    setTimeout(nextMessage, 350);
 
 }
     
