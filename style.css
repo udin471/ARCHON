@@ -684,3 +684,33 @@ animation: panelReveal .6s ease forwards;
     margin-top: 40px;
 
 }
+
+/* ======================================
+   ARCHIVE TERMINAL
+====================================== */
+
+#archiveLogLoadingText p {
+
+    opacity: 0;
+
+    animation:
+        fadeIn .25s forwards,
+        terminalBlink 2.5s infinite;
+
+}
+
+@keyframes terminalBlink {
+
+    0%, 97%, 100% {
+        opacity: 1;
+    }
+
+    98% {
+        opacity: .35;
+    }
+
+    99% {
+        opacity: 1;
+    }
+
+}
