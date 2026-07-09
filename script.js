@@ -265,6 +265,18 @@ function closeArchive() {
     // ARCHIVE LOG 001
     // ======================================
 
+    function openArchiveLogLoading() {
+
+    archivePage.style.display = "none";
+
+    showPage(archiveLogLoadingPage);
+
+    archiveLogLoadingText.innerHTML = `
+        <p>Accessing Archive...</p>
+    `;
+
+}
+    
 function openArchiveLog001() {
 
     archivePage.style.display = "none";
