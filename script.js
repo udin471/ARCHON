@@ -298,8 +298,8 @@ function openArchiveLogLoading() {
         }
 
         archiveLogLoadingText.innerHTML += `
-            <p>${messages[index]}</p>
-        `;
+    <p>> ${messages[index]}</p>
+`;
 
         index++;
 
