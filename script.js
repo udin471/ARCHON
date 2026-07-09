@@ -283,6 +283,8 @@ function openArchiveLogLoading() {
     
 function openArchiveLog001() {
 
+    console.log("OPEN ARCHIVE LOG 001");
+
     showPage(archiveLog001Page);
 
 }
