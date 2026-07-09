@@ -77,7 +77,8 @@ if (!boot || !bootText || !enterBtn || !menu) {
     chapterPage.style.display = "none";
     archiveLoadingPage.style.display = "none";
 archonProfilePage.style.display = "none";
-    
+    archivePage.style.display = "none";
+    
     // ======================================
     // TYPEWRITER EFFECT
     // ======================================
