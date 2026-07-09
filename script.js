@@ -580,7 +580,13 @@ if (archonProfileReturnBtn) {
     archonProfileReturnBtn.addEventListener("click", closeArchonProfile);
 
 }
-    
+
+    if (archiveReturnBtn) {
+
+    archiveReturnBtn.addEventListener("click", closeArchive);
+
+    }
+    
     if (chapterNextBtn) {
 
     chapterNextBtn.addEventListener("click", () => {
