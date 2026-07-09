@@ -232,6 +232,22 @@ function goToMenu(currentPage) {
 
 }
 
+    // ======================================
+    // ARCHIVE PAGE
+    // ======================================
+
+function openArchive() {
+
+    showPage(archivePage);
+
+}
+
+function closeArchive() {
+
+    goToMenu(archivePage);
+
+}
+    
     // ======================================
     // DATABASE PAGE
     // ======================================
