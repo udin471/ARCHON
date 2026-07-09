@@ -283,7 +283,7 @@ function openArchiveLogLoading() {
     
 function openArchiveLog001() {
 
-    console.log("OPEN ARCHIVE LOG 001");
+    archiveLogLoadingPage.style.display = "none";
 
     showPage(archiveLog001Page);
 
