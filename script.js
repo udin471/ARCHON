@@ -664,7 +664,7 @@ if (archonProfileReturnBtn) {
 
     if (archiveLog001Btn) {
 
-    archiveLog001Btn.addEventListener("click", openArchiveLog001);
+    archiveLog001Btn.addEventListener("click", openArchiveLogLoading);
 
     }
 
