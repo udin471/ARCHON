@@ -265,7 +265,7 @@ function closeArchive() {
     // ARCHIVE LOG 001
     // ======================================
 
-    function openArchiveLogLoading() {
+function openArchiveLogLoading() {
 
     archivePage.style.display = "none";
 
@@ -274,6 +274,42 @@ function closeArchive() {
     archiveLogLoadingText.innerHTML = `
         <p>Accessing Archive...</p>
     `;
+
+    const messages = [
+
+        "Decrypting Historical Record...",
+
+        "Archive Restored."
+
+    ];
+
+    let index = 0;
+
+    function nextMessage() {
+
+        if (index >= messages.length) {
+
+            setTimeout(() => {
+
+                openArchiveLog001();
+
+            }, 400);
+
+            return;
+
+        }
+
+        archiveLogLoadingText.innerHTML += `
+            <p>${messages[index]}</p>
+        `;
+
+        index++;
+
+        setTimeout(nextMessage, 600);
+
+    }
+
+    setTimeout(nextMessage, 500);
 
 }
     
