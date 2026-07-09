@@ -232,8 +232,15 @@ archonProfilePage.style.display = "none";
 
 function showPage(page) {
 
-    menu.style.display = "none";
-    page.style.display = "flex";
+    const pages = document.querySelectorAll(".page");
+
+    pages.forEach(p => {
+        p.style.display = "none";
+    });
+
+    menu.style.display = "none";
+
+    page.style.display = "flex";
 
 }
 
