@@ -232,14 +232,7 @@ archonProfilePage.style.display = "none";
 
 function showPage(page) {
 
-    const pages = document.querySelectorAll(".page");
-
-    pages.forEach(p => {
-        p.style.display = "none";
-    });
-
     menu.style.display = "none";
-
     page.style.display = "flex";
 
 }
