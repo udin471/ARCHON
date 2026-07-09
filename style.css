@@ -636,3 +636,51 @@ animation: panelReveal .6s ease forwards;
         0 0 6px rgba(51,255,136,.6);
 
 }
+
+/* ======================================
+   ARCHIVE PAGE
+====================================== */
+
+#archivePage .mission-content {
+
+    max-width: 800px;
+
+}
+
+#archivePage h3 {
+
+    margin-bottom: 10px;
+
+    letter-spacing: 3px;
+
+    color: #49d9ff;
+
+}
+
+#archivePage p {
+
+    padding: 10px 0;
+
+    border-bottom: 1px solid rgba(73,217,255,.12);
+
+    letter-spacing: 1px;
+
+    transition: .3s;
+
+}
+
+#archivePage p:hover {
+
+    color: white;
+
+    padding-left: 10px;
+
+    text-shadow: 0 0 8px #49d9ff;
+
+}
+
+#archiveReturnBtn {
+
+    margin-top: 40px;
+
+}
