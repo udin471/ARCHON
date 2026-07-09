@@ -24,7 +24,8 @@ const chapter00Btn = document.getElementById("chapter00Btn");
 const archonProfileBtn = document.getElementById("archonProfileBtn");
 const archiveLoadingPage = document.getElementById("archiveLoadingPage");
 const archiveLoadingText = document.getElementById("archiveLoadingText");
-
+const archivePage = document.getElementById("archivePage");
+const archiveReturnBtn = document.getElementById("archiveReturnBtn");
 const archonProfilePage = document.getElementById("archonProfilePage");
 const archonProfileContent = document.getElementById("archonProfileContent");
 const archonProfileReturnBtn = document.getElementById("archonProfileReturnBtn");
