@@ -257,6 +257,26 @@ function closeArchive() {
     goToMenu(archivePage);
 
 }
+
+    // ======================================
+    // ARCHIVE LOG 001
+    // ======================================
+
+function openArchiveLog001() {
+
+    archivePage.style.display = "none";
+
+    showPage(archiveLog001Page);
+
+}
+
+function closeArchiveLog001() {
+
+    archiveLog001Page.style.display = "none";
+
+    showPage(archivePage);
+
+}
     
     // ======================================
     // DATABASE PAGE
