@@ -200,7 +200,13 @@ archonProfilePage.style.display = "none";
     item.addEventListener("click", openDatabase);
 
             }
-            
+
+            if (menuItems[index] === "ARCHIVE") {
+
+    item.addEventListener("click", openArchive);
+
+            }
+            
             menu.appendChild(item);
 
             index++;
