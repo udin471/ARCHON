@@ -81,6 +81,7 @@ if (!boot || !bootText || !enterBtn || !menu) {
     archiveLoadingPage.style.display = "none";
 archonProfilePage.style.display = "none";
     archivePage.style.display = "none";
+    archiveLog001Page.style.display = "none";
     
     // ======================================
     // TYPEWRITER EFFECT
