@@ -273,12 +273,16 @@ function openArchiveLogLoading() {
         <p>Accessing Archive...</p>
     `;
 
+    setTimeout(() => {
+
+        openArchiveLog001();
+
+    }, 1000);
+
 }
     
 function openArchiveLog001() {
 
-    archivePage.style.display = "none";
-    
     showPage(archiveLog001Page);
 
 }
