@@ -277,6 +277,8 @@ function openArchiveLogLoading() {
     
 function openArchiveLog001() {
 
+    archivePage.style.display = "none";
+    
     showPage(archiveLog001Page);
 
 }
