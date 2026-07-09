@@ -610,6 +610,12 @@ if (archonProfileReturnBtn) {
     archiveReturnBtn.addEventListener("click", closeArchive);
 
     }
+
+    if (archiveLog001Btn) {
+
+    archiveLog001Btn.addEventListener("click", openArchiveLog001);
+
+    }
     
     if (chapterNextBtn) {
 
