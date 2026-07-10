@@ -714,3 +714,53 @@ animation: panelReveal .6s ease forwards;
     }
 
 }
+
+/* ======================================
+   ARCHIVE GLITCH ENGINE
+====================================== */
+
+.archive-glitch {
+
+    animation: archiveGlitch .12s;
+
+}
+
+@keyframes archiveGlitch {
+
+    0% {
+
+        transform: translateX(0);
+        filter: brightness(1);
+
+    }
+
+    20% {
+
+        transform: translateX(-2px);
+
+        filter:
+            brightness(1.35)
+            drop-shadow(0 0 8px #49d9ff);
+
+    }
+
+    40% {
+
+        transform: translateX(2px);
+
+    }
+
+    60% {
+
+        transform: translateX(-1px);
+
+    }
+
+    100% {
+
+        transform: translateX(0);
+        filter: brightness(1);
+
+    }
+
+}
