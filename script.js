@@ -780,6 +780,53 @@ function animateDatabaseValues() {
     });
 
 }
+
+    // ======================================
+// ARCHIVE GLITCH ENGINE
+// ======================================
+
+let archiveGlitchTimer = null;
+
+function startArchiveGlitch() {
+
+    stopArchiveGlitch();
+
+    function glitchLoop() {
+
+        // Pastikan LOG 001 sedang terbuka
+        if (archiveLog001Page.style.display === "flex") {
+
+            archiveLog001Page.classList.add("archive-glitch");
+
+            setTimeout(() => {
+
+                archiveLog001Page.classList.remove("archive-glitch");
+
+            }, 120);
+
+        }
+
+        const randomDelay = 6000 + Math.random() * 6000;
+
+        archiveGlitchTimer = setTimeout(glitchLoop, randomDelay);
+
+    }
+
+    glitchLoop();
+
+}
+
+function stopArchiveGlitch() {
+
+    if (archiveGlitchTimer) {
+
+        clearTimeout(archiveGlitchTimer);
+
+        archiveGlitchTimer = null;
+
+    }
+
+}
     
     // ======================================
     // START SYSTEM
