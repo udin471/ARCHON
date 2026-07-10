@@ -721,7 +721,7 @@ animation: panelReveal .6s ease forwards;
 
 .archive-glitch {
 
-    animation: archiveGlitch .12s;
+    animation: archiveGlitch 1s ease-in-out;
 
 }
 
