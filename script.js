@@ -806,11 +806,11 @@ function startArchiveGlitch() {
 
                 archiveLog001Page.classList.remove("archive-glitch");
 
-            }, 120);
+            }, 1000);
 
         }
 
-        const randomDelay = 6000 + Math.random() * 6000;
+        const randomDelay = 4000 + Math.random() * 4000;
 
         archiveGlitchTimer = setTimeout(glitchLoop, randomDelay);
 
