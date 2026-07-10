@@ -725,7 +725,9 @@ animation: panelReveal .6s ease forwards;
 
     overflow:hidden;
 
-    animation: archiveGlitch 1s ease-in-out;
+    isolation:isolate;
+
+    animation:archiveGlitch 1s ease-in-out;
 
 }
 
