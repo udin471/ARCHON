@@ -716,50 +716,93 @@ animation: panelReveal .6s ease forwards;
 }
 
 /* ======================================
-   ARCHIVE GLITCH ENGINE
+   ARCHIVE GLITCH ENGINE v1.1
 ====================================== */
 
-.archive-glitch {
+.archive-glitch{
 
     animation: archiveGlitch 1s ease-in-out;
 
 }
 
-@keyframes archiveGlitch {
+@keyframes archiveGlitch{
 
-    0% {
+    0%{
 
-        transform: translateX(0);
-        filter: brightness(1);
+        transform:translateX(0) skew(0deg);
+        filter:brightness(1);
 
     }
 
-    20% {
+    10%{
 
-        transform: translateX(-2px);
+        transform:translateX(-3px) skew(-1deg);
+        filter:
+        brightness(1.4)
+        contrast(1.2)
+        drop-shadow(0 0 8px #49d9ff);
+
+    }
+
+    20%{
+
+        transform:translateX(3px) skew(1deg);
+
+    }
+
+    30%{
+
+        transform:translateX(-2px);
+
+    }
+
+    40%{
+
+        transform:translateX(2px);
+
+    }
+
+    50%{
+
+        transform:translateX(-1px);
 
         filter:
-            brightness(1.35)
-            drop-shadow(0 0 8px #49d9ff);
+        brightness(1.5)
+        contrast(1.4);
 
     }
 
-    40% {
+    60%{
 
-        transform: translateX(2px);
-
-    }
-
-    60% {
-
-        transform: translateX(-1px);
+        transform:translateX(1px);
 
     }
 
-    100% {
+    70%{
 
-        transform: translateX(0);
-        filter: brightness(1);
+        transform:translateX(-2px);
+
+    }
+
+    80%{
+
+        transform:translateX(2px);
+
+    }
+
+    90%{
+
+        transform:translateX(-1px);
+
+        filter:
+        brightness(1.25);
+
+    }
+
+    100%{
+
+        transform:translateX(0);
+        filter:brightness(1);
 
     }
 
