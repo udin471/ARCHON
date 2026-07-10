@@ -323,6 +323,8 @@ function openArchiveLog001() {
 
 function closeArchiveLog001() {
 
+    stopArchiveGlitch();
+
     archiveLog001Page.style.display = "none";
 
     showPage(archivePage);
