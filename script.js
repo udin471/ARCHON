@@ -317,6 +317,8 @@ function openArchiveLog001() {
 
     showPage(archiveLog001Page);
 
+    startArchiveGlitch();
+
 }
 
 function closeArchiveLog001() {
