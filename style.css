@@ -739,6 +739,8 @@ animation: panelReveal .6s ease forwards;
 
     pointer-events:none;
 
+    z-index:100;
+
     background:
     repeating-linear-gradient(
         to bottom,
