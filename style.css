@@ -725,6 +725,31 @@ animation: panelReveal .6s ease forwards;
 
 }
 
+.archive-glitch::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+    repeating-linear-gradient(
+        to bottom,
+        rgba(73,217,255,.05) 0px,
+        rgba(73,217,255,.05) 2px,
+        transparent 3px,
+        transparent 6px
+    );
+
+    animation:scanMove .12s linear infinite;
+
+    opacity:.45;
+
+}
+
 @keyframes archiveGlitch{
 
     0%{
