@@ -802,15 +802,17 @@ function startArchiveGlitch() {
 
             archiveLog001Page.classList.add(
     "archive-glitch",
-    "archive-signal-flash"
+    "archive-signal-flash",
+    "archive-noise"
 );
 
 setTimeout(() => {
 
     archiveLog001Page.classList.remove(
-        "archive-glitch",
-        "archive-signal-flash"
-    );
+    "archive-glitch",
+    "archive-signal-flash",
+    "archive-noise"
+);
 
 }, 1000);
 
