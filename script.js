@@ -803,9 +803,8 @@ function startArchiveGlitch() {
             archiveLog001Page.classList.add(
     "archive-glitch",
     "archive-signal-flash",
-    "archive-noise"
+    "archive-noise",
     "archive-recovery"
-            
 );
 
 setTimeout(() => {
@@ -813,9 +812,8 @@ setTimeout(() => {
     archiveLog001Page.classList.remove(
     "archive-glitch",
     "archive-signal-flash",
-    "archive-noise"
+    "archive-noise",
     "archive-recovery"
-    
 );
 
 }, 1000);
