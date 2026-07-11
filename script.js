@@ -800,13 +800,19 @@ function startArchiveGlitch() {
         // Pastikan LOG 001 sedang terbuka
         if (archiveLog001Page.style.display === "flex") {
 
-            archiveLog001Page.classList.add("archive-glitch");
+            archiveLog001Page.classList.add(
+    "archive-glitch",
+    "archive-signal-flash"
+);
 
-            setTimeout(() => {
+setTimeout(() => {
 
-                archiveLog001Page.classList.remove("archive-glitch");
+    archiveLog001Page.classList.remove(
+        "archive-glitch",
+        "archive-signal-flash"
+    );
 
-            }, 1000);
+}, 1000);
 
         }
 
