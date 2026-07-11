@@ -867,6 +867,89 @@ drop-shadow(1px 0 rgba(255,60,60,.35));
 }
 
 /* ======================================
+   NOISE BURST v2.0
+====================================== */
+
+.archive-noise{
+
+    position:relative;
+
+}
+
+.archive-noise::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:102;
+
+    opacity:0;
+
+    background-image:
+
+    repeating-radial-gradient(
+        circle at center,
+        rgba(255,255,255,.18) 0 1px,
+        transparent 1px 3px
+    ),
+
+    repeating-linear-gradient(
+        90deg,
+        transparent 0 2px,
+        rgba(73,217,255,.08) 2px 3px
+    );
+
+    mix-blend-mode:screen;
+
+    animation:noiseBurst .18s steps(2,end);
+
+}
+
+@keyframes noiseBurst{
+
+    0%{
+
+        opacity:0;
+
+        transform:scale(1);
+
+    }
+
+    20%{
+
+        opacity:.55;
+
+    }
+
+    45%{
+
+        opacity:.25;
+
+        transform:scale(1.01);
+
+    }
+
+    70%{
+
+        opacity:.45;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:scale(1);
+
+    }
+
+}
+/* ======================================
    HORIZONTAL TEARING v2.0
 ====================================== */
 
