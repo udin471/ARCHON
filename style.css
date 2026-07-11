@@ -950,6 +950,69 @@ drop-shadow(1px 0 rgba(255,60,60,.35));
 
 }
 /* ======================================
+   RECOVERY FLICKER v2.0
+====================================== */
+
+.archive-recovery{
+
+    animation:recoveryFlicker .45s ease;
+
+}
+
+@keyframes recoveryFlicker{
+
+    0%{
+
+        opacity:1;
+
+        filter:brightness(1);
+
+    }
+
+    20%{
+
+        opacity:.45;
+
+        filter:brightness(1.35);
+
+    }
+
+    35%{
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        opacity:.65;
+
+    }
+
+    70%{
+
+        opacity:1;
+
+        filter:brightness(1.15);
+
+    }
+
+    85%{
+
+        opacity:.85;
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        filter:brightness(1);
+
+    }
+
+}
+/* ======================================
    HORIZONTAL TEARING v2.0
 ====================================== */
 
