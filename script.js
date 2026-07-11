@@ -804,6 +804,8 @@ function startArchiveGlitch() {
     "archive-glitch",
     "archive-signal-flash",
     "archive-noise"
+    "archive-recovery"
+            
 );
 
 setTimeout(() => {
@@ -812,6 +814,8 @@ setTimeout(() => {
     "archive-glitch",
     "archive-signal-flash",
     "archive-noise"
+    "archive-recovery"
+    
 );
 
 }, 1000);
