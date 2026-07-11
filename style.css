@@ -1050,7 +1050,7 @@ drop-shadow(1px 0 rgba(255,60,60,.35));
         transparent 86%
     );
 
-    animation:horizontalTearing .9s steps(1,end);
+    animation:horizontalTearing .45s steps(1,end);
 
 }
 
@@ -1068,31 +1068,31 @@ drop-shadow(1px 0 rgba(255,60,60,.35));
 
         opacity:1;
 
-        transform:translateX(-8px);
+        transform:translateX(-3px);
 
     }
 
     20%{
 
-        transform:translateX(6px);
+        transform:translateX(2px);
 
     }
 
     35%{
 
-        transform:translateX(-4px);
+        transform:translateX(-2px);
 
     }
 
     55%{
 
-        transform:translateX(7px);
+        transform:translateX(3px);
 
     }
 
     75%{
 
-        transform:translateX(-3px);
+        transform:translateX(-1px);
 
     }
 
