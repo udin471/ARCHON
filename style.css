@@ -894,14 +894,14 @@ drop-shadow(1px 0 rgba(255,60,60,.35));
 
     repeating-radial-gradient(
         circle at center,
-        rgba(255,255,255,.18) 0 1px,
+        rgba(255,40,40,.45) 0 1px,
         transparent 1px 3px
     ),
 
     repeating-linear-gradient(
         90deg,
         transparent 0 2px,
-        rgba(73,217,255,.08) 2px 3px
+        rgba(255,60,60,.30) 2px 3px
     );
 
     mix-blend-mode:screen;
@@ -920,23 +920,25 @@ drop-shadow(1px 0 rgba(255,60,60,.35));
 
     }
 
-    20%{
+   20%{
 
-        opacity:.55;
+    opacity:.85;
+
+    transform:scale(1.015);
 
     }
 
     45%{
 
-        opacity:.25;
+    opacity:.55;
 
-        transform:scale(1.01);
+    transform:scale(1.03);
 
     }
 
     70%{
 
-        opacity:.45;
+    opacity:.75;
 
     }
 
