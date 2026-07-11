@@ -867,6 +867,100 @@ drop-shadow(1px 0 rgba(255,60,60,.35));
 }
 
 /* ======================================
+   HORIZONTAL TEARING v2.0
+====================================== */
+
+.archive-glitch::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:101;
+
+    opacity:0;
+
+    background:
+
+    linear-gradient(
+        transparent 8%,
+        rgba(73,217,255,.30) 10%,
+        transparent 13%,
+
+        transparent 32%,
+        rgba(73,217,255,.22) 34%,
+        transparent 36%,
+
+        transparent 58%,
+        rgba(73,217,255,.28) 60%,
+        transparent 63%,
+
+        transparent 82%,
+        rgba(73,217,255,.24) 84%,
+        transparent 86%
+    );
+
+    animation:horizontalTearing .9s steps(1,end);
+
+}
+
+@keyframes horizontalTearing{
+
+    0%{
+
+        opacity:0;
+
+        transform:translateX(0);
+
+    }
+
+    10%{
+
+        opacity:1;
+
+        transform:translateX(-8px);
+
+    }
+
+    20%{
+
+        transform:translateX(6px);
+
+    }
+
+    35%{
+
+        transform:translateX(-4px);
+
+    }
+
+    55%{
+
+        transform:translateX(7px);
+
+    }
+
+    75%{
+
+        transform:translateX(-3px);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+/* ======================================
    SIGNAL FLASH v2.0
 ====================================== */
 
