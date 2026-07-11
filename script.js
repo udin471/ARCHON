@@ -800,12 +800,39 @@ function startArchiveGlitch() {
         // Pastikan LOG 001 sedang terbuka
         if (archiveLog001Page.style.display === "flex") {
 
-            archiveLog001Page.classList.add(
-    "archive-glitch",
-    "archive-signal-flash",
-    "archive-noise",
-    "archive-recovery"
-);
+            const glitchTypes = [
+
+    [
+        "archive-glitch",
+        "archive-signal-flash",
+        "archive-recovery"
+    ],
+
+    [
+        "archive-glitch",
+        "archive-signal-flash",
+        "archive-noise",
+        "archive-recovery"
+    ],
+
+    [
+        "archive-glitch",
+        "archive-signal-flash",
+        "archive-noise",
+        "archive-recovery"
+    ],
+
+    [
+        "archive-glitch",
+        "archive-recovery"
+    ]
+
+];
+
+const activeGlitch =
+glitchTypes[Math.floor(Math.random() * glitchTypes.length)];
+
+archiveLog001Page.classList.add(...activeGlitch);
 
 setTimeout(() => {
 
