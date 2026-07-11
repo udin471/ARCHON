@@ -865,3 +865,57 @@ drop-shadow(1px 0 rgba(255,60,60,.35));
     }
 
 }
+
+/* ======================================
+   SIGNAL FLASH v2.0
+====================================== */
+
+.archive-signal-flash{
+
+    animation:signalFlash .18s linear;
+
+}
+
+@keyframes signalFlash{
+
+    0%{
+
+        filter:
+        brightness(1)
+        contrast(1);
+
+    }
+
+    20%{
+
+        filter:
+        brightness(2.2)
+        contrast(1.8);
+
+    }
+
+    45%{
+
+        filter:
+        brightness(.75)
+        contrast(1.2);
+
+    }
+
+    70%{
+
+        filter:
+        brightness(1.6)
+        contrast(1.4);
+
+    }
+
+    100%{
+
+        filter:
+        brightness(1)
+        contrast(1);
+
+    }
+
+}
